@@ -2,7 +2,7 @@
 
 | Student's name | SCIPER |
 | -------------- | ------ |
-| | |
+| Xavier Theimer-Lienhard | 301570 |
 | | |
 | | |
 
