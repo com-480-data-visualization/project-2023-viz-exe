@@ -3,7 +3,7 @@
 | Student's name | SCIPER |
 | -------------- | ------ |
 | Xavier Theimer-Lienhard | 301570 |
-| | |
+| Emmanuelle Denove | 301576 |
 | | |
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
