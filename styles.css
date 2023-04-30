@@ -1,0 +1,13 @@
+.section {
+    text-align: center;
+    font-size: 10em;
+}
+
+.fp-watermark { 
+    display: none;
+}
+
+.section {
+    font-family: arial,helvetica;
+    color : #fff;
+}
