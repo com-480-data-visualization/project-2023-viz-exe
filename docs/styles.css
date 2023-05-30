@@ -1,13 +1,13 @@
 .section {
     text-align: center;
     font-size: 10em;
+    font-family: arial,helvetica;
+    color : #fff;
 }
 
 .fp-watermark { 
     display: none;
 }
-
-.section {
-    font-family: arial,helvetica;
-    color : #fff;
-}
+#map { align: center;
+    height: 1000px;
+        width:1000px; }
