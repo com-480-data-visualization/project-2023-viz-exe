@@ -1,0 +1,111 @@
+,Rank,City,Cost of Living Index,Rent Index,Cost of Living Plus Rent Index,Groceries Index,Restaurant Price Index,Local Purchasing Power Index,Location,State
+11,12,"New York, NY, United States",100.0,100.0,100.0,100.0,100.0,100.0,"['New York', ' NY', ' United States']", NY
+13,14,"San Francisco, CA, United States",96.88,106.49,101.43,101.93,94.58,125.95,"['San Francisco', ' CA', ' United States']", CA
+14,15,"Honolulu, HI, United States",93.72,63.96,79.63,96.32,86.72,113.58,"['Honolulu', ' HI', ' United States']", HI
+15,16,"Anchorage, AK, United States",93.19,39.45,67.75,96.74,78.76,138.38,"['Anchorage', ' AK', ' United States']", AK
+16,17,"Brooklyn, NY, United States",90.31,81.02,85.91,83.16,95.27,87.05,"['Brooklyn', ' NY', ' United States']", NY
+17,18,"Washington, DC, United States",88.5,70.28,79.87,86.63,86.23,131.53,"['Washington', ' DC', ' United States']", DC
+18,19,"Santa Rosa, CA, United States",88.27,56.69,73.32,84.35,82.55,116.47,"['Santa Rosa', ' CA', ' United States']", CA
+20,21,"Charleston, SC, United States",86.87,46.12,67.58,90.86,73.48,106.06,"['Charleston', ' SC', ' United States']", SC
+22,23,"Bellevue, WA, United States",85.97,61.2,74.24,78.24,82.29,186.0,"['Bellevue', ' WA', ' United States']", WA
+23,24,"Seattle, WA, United States",85.51,64.7,75.66,83.72,80.27,140.0,"['Seattle', ' WA', ' United States']", WA
+27,28,"Berkeley, CA, United States",84.09,76.39,80.45,81.99,87.6,119.03,"['Berkeley', ' CA', ' United States']", CA
+28,29,"Jersey City, NJ, United States",84.08,61.58,73.43,86.08,81.44,120.46,"['Jersey City', ' NJ', ' United States']", NJ
+34,35,"Oakland, CA, United States",81.18,77.14,79.27,77.54,78.55,137.74,"['Oakland', ' CA', ' United States']", CA
+36,37,"Boston, MA, United States",80.46,76.09,78.39,75.71,83.08,124.57,"['Boston', ' MA', ' United States']", MA
+40,41,"Hartford, CT, United States",79.85,41.58,61.73,83.41,72.82,84.71,"['Hartford', ' CT', ' United States']", CT
+41,42,"Albany, NY, United States",79.38,31.01,56.48,77.5,77.64,108.77,"['Albany', ' NY', ' United States']", NY
+42,43,"Philadelphia, PA, United States",79.25,49.35,65.1,74.58,74.75,109.34,"['Philadelphia', ' PA', ' United States']", PA
+46,47,"Irvine, CA, United States",78.38,65.75,72.4,73.87,73.72,135.16,"['Irvine', ' CA', ' United States']", CA
+48,49,"Long Beach, CA, United States",77.95,55.18,67.17,74.93,77.97,128.82,"['Long Beach', ' CA', ' United States']", CA
+50,51,"Los Angeles, CA, United States",77.66,70.45,74.25,71.59,81.71,114.51,"['Los Angeles', ' CA', ' United States']", CA
+53,54,"Chicago, IL, United States",77.33,55.53,67.01,70.69,78.52,133.7,"['Chicago', ' IL', ' United States']", IL
+56,57,"Boulder, CO, United States",77.16,53.54,65.98,76.79,68.35,112.76,"['Boulder', ' CO', ' United States']", CO
+64,65,"San Jose, CA, United States",76.28,76.61,76.43,71.1,83.14,170.91,"['San Jose', ' CA', ' United States']", CA
+65,66,"Burlington, VT, United States",76.11,41.81,59.87,73.17,78.69,76.97,"['Burlington', ' VT', ' United States']", VT
+66,67,"Pittsburgh, PA, United States",76.04,38.23,58.15,71.89,66.74,114.28,"['Pittsburgh', ' PA', ' United States']", PA
+68,69,"Miami, FL, United States",75.83,57.81,67.3,67.27,81.89,89.99,"['Miami', ' FL', ' United States']", FL
+71,72,"Santa Barbara, CA, United States",75.55,68.66,72.29,67.52,91.99,124.41,"['Santa Barbara', ' CA', ' United States']", CA
+72,73,"Sacramento, CA, United States",75.54,44.29,60.75,69.09,77.91,145.88,"['Sacramento', ' CA', ' United States']", CA
+78,79,"Portland, ME, United States",74.81,42.4,59.47,72.45,85.71,122.77,"['Portland', ' ME', ' United States']", ME
+79,80,"West Palm Beach, FL, United States",74.79,42.16,59.34,70.55,82.5,119.13,"['West Palm Beach', ' FL', ' United States']", FL
+87,88,"Everett, WA, United States",74.36,43.44,59.72,72.61,73.78,119.38,"['Everett', ' WA', ' United States']", WA
+89,90,"Tacoma, WA, United States",74.21,38.62,57.36,71.42,71.47,130.05,"['Tacoma', ' WA', ' United States']", WA
+90,91,"Portland, OR, United States",74.17,50.67,63.05,69.19,71.6,126.03,"['Portland', ' OR', ' United States']", OR
+96,97,"Baltimore, MD, United States",73.85,42.89,59.2,68.71,77.01,127.77,"['Baltimore', ' MD', ' United States']", MD
+99,100,"New Orleans, LA, United States",73.61,41.21,58.27,67.0,86.02,106.74,"['New Orleans', ' LA', ' United States']", LA
+104,105,"Charlotte, NC, United States",73.33,41.65,58.33,69.21,76.67,142.25,"['Charlotte', ' NC', ' United States']", NC
+108,109,"Minneapolis, MN, United States",72.93,46.18,60.27,68.29,75.64,133.75,"['Minneapolis', ' MN', ' United States']", MN
+114,115,"Eugene, OR, United States",72.46,30.44,52.57,78.36,67.68,99.5,"['Eugene', ' OR', ' United States']", OR
+117,118,"San Diego, CA, United States",72.29,61.06,66.97,64.11,79.21,144.91,"['San Diego', ' CA', ' United States']", CA
+120,121,"Bellingham, WA, United States",72.14,34.17,54.17,68.93,71.96,114.33,"['Bellingham', ' WA', ' United States']", WA
+121,122,"Atlanta, GA, United States",72.05,46.89,60.14,66.94,73.06,150.38,"['Atlanta', ' GA', ' United States']", GA
+122,123,"Denver, CO, United States",72.02,54.09,63.53,67.92,76.9,130.34,"['Denver', ' CO', ' United States']", CO
+123,124,"Saint Paul, MN, United States",71.94,45.24,59.3,70.22,74.59,111.58,"['Saint Paul', ' MN', ' United States']", MN
+125,126,"Birmingham, AL, United States",71.87,34.03,53.96,69.4,69.34,107.87,"['Birmingham', ' AL', ' United States']", AL
+128,129,"Asheville, NC, United States",71.52,37.19,55.27,71.47,70.69,104.81,"['Asheville', ' NC', ' United States']", NC
+130,131,"Fort Myers, FL, United States",71.5,33.45,53.49,68.78,77.88,104.54,"['Fort Myers', ' FL', ' United States']", FL
+136,137,"Indianapolis, IN, United States",70.79,34.81,53.76,67.2,71.87,109.93,"['Indianapolis', ' IN', ' United States']", IN
+138,139,"Jacksonville, FL, United States",70.62,31.36,52.04,69.0,67.63,132.56,"['Jacksonville', ' FL', ' United States']", FL
+139,140,"Buffalo, NY, United States",70.59,29.3,51.04,62.31,72.75,111.16,"['Buffalo', ' NY', ' United States']", NY
+140,141,"Olympia, WA, United States",70.57,40.4,56.28,60.02,78.68,135.82,"['Olympia', ' WA', ' United States']", WA
+141,142,"Saint Petersburg, FL, United States",70.49,40.59,56.33,66.03,72.96,127.77,"['Saint Petersburg', ' FL', ' United States']", FL
+142,143,"Austin, TX, United States",70.49,50.35,60.96,65.81,78.34,151.25,"['Austin', ' TX', ' United States']", TX
+146,147,"Rochester, NY, United States",70.25,30.81,51.58,69.88,71.98,91.12,"['Rochester', ' NY', ' United States']", NY
+149,150,"Orlando, FL, United States",70.18,38.43,55.15,68.5,69.67,130.1,"['Orlando', ' FL', ' United States']", FL
+156,157,"Peoria, IL, United States",69.84,25.55,48.88,68.44,63.92,118.14,"['Peoria', ' IL', ' United States']", IL
+158,159,"Cleveland, OH, United States",69.65,28.24,50.05,62.06,69.68,105.12,"['Cleveland', ' OH', ' United States']", OH
+166,167,"Raleigh, NC, United States",69.18,36.18,53.56,71.88,66.4,155.96,"['Raleigh', ' NC', ' United States']", NC
+169,170,"Arlington, TX, United States",69.07,30.98,51.04,64.58,62.75,141.64,"['Arlington', ' TX', ' United States']", TX
+171,172,"Saint Louis, MO, United States",69.02,29.42,50.28,65.14,71.31,149.05,"['Saint Louis', ' MO', ' United States']", MO
+174,175,"Milwaukee, WI, United States",68.81,35.57,53.07,63.74,71.41,107.87,"['Milwaukee', ' WI', ' United States']", WI
+176,177,"Nashville, TN, United States",68.78,49.17,59.5,64.1,76.79,136.29,"['Nashville', ' TN', ' United States']", TN
+178,179,"Tampa, FL, United States",68.61,39.54,54.85,65.38,72.99,140.97,"['Tampa', ' FL', ' United States']", FL
+182,183,"Virginia Beach, VA, United States",67.86,35.84,52.7,62.06,71.73,161.28,"['Virginia Beach', ' VA', ' United States']", VA
+185,186,"Syracuse, NY, United States",67.55,33.6,51.48,63.81,68.6,94.96,"['Syracuse', ' NY', ' United States']", NY
+191,192,"Tallahassee, FL, United States",67.24,26.47,47.94,71.3,59.97,128.82,"['Tallahassee', ' FL', ' United States']", FL
+192,193,"Bakersfield, CA, United States",67.11,28.95,49.05,63.16,70.58,151.58,"['Bakersfield', ' CA', ' United States']", CA
+193,194,"Ann Arbor, MI, United States",67.06,47.59,57.84,60.7,58.5,128.99,"['Ann Arbor', ' MI', ' United States']", MI
+196,197,"Las Vegas, NV, United States",66.98,29.55,49.27,59.56,72.2,144.4,"['Las Vegas', ' NV', ' United States']", NV
+197,198,"Columbus, OH, United States",66.9,36.92,52.71,58.94,66.04,128.77,"['Columbus', ' OH', ' United States']", OH
+199,200,"Spokane, WA, United States",66.6,28.33,48.49,59.19,68.65,124.45,"['Spokane', ' WA', ' United States']", WA
+203,204,"Memphis, TN, United States",66.49,26.58,47.6,59.36,70.42,125.07,"['Memphis', ' TN', ' United States']", TN
+207,208,"Columbia, SC, United States",66.23,27.73,48.01,65.6,67.08,124.84,"['Columbia', ' SC', ' United States']", SC
+210,211,"Salem, OR, United States",66.04,28.93,48.48,61.63,63.28,125.24,"['Salem', ' OR', ' United States']", OR
+213,214,"Fort Wayne, IN, United States",65.88,21.74,44.98,70.07,63.82,124.37,"['Fort Wayne', ' IN', ' United States']", IN
+214,215,"Dayton, OH, United States",65.84,21.97,45.07,62.6,64.97,91.21,"['Dayton', ' OH', ' United States']", OH
+217,218,"Kansas City, MO, United States",65.74,30.53,49.07,58.43,68.12,138.6,"['Kansas City', ' MO', ' United States']", MO
+221,222,"Fort Worth, TX, United States",65.19,35.53,51.15,56.86,70.27,140.43,"['Fort Worth', ' TX', ' United States']", TX
+227,228,"Fayetteville, AR, United States",64.84,25.9,46.41,61.15,67.22,109.58,"['Fayetteville', ' AR', ' United States']", AR
+233,234,"Richmond, VA, United States",64.56,35.24,50.68,63.54,62.47,132.62,"['Richmond', ' VA', ' United States']", VA
+235,236,"Greensboro, NC, United States",64.46,27.34,46.89,63.03,61.8,133.53,"['Greensboro', ' NC', ' United States']", NC
+238,239,"Dallas, TX, United States",64.32,43.15,54.3,58.5,68.02,153.42,"['Dallas', ' TX', ' United States']", TX
+239,240,"Albuquerque, NM, United States",64.32,27.29,46.79,64.42,63.21,128.27,"['Albuquerque', ' NM', ' United States']", NM
+240,241,"Phoenix, AZ, United States",64.31,33.65,49.79,56.58,72.47,146.15,"['Phoenix', ' AZ', ' United States']", AZ
+242,243,"Gainesville, FL, United States",63.62,29.02,47.24,60.52,58.47,106.34,"['Gainesville', ' FL', ' United States']", FL
+244,245,"Grand Rapids, MI, United States",63.47,31.04,48.12,55.26,71.44,129.66,"['Grand Rapids', ' MI', ' United States']", MI
+245,246,"Tucson, AZ, United States",63.35,23.63,44.55,52.48,63.98,122.68,"['Tucson', ' AZ', ' United States']", AZ
+246,247,"Madison, WI, United States",63.3,37.52,51.09,56.66,65.73,144.61,"['Madison', ' WI', ' United States']", WI
+247,248,"Chattanooga, TN, United States",63.28,29.58,47.33,57.19,60.41,124.02,"['Chattanooga', ' TN', ' United States']", TN
+248,249,"Fresno, CA, United States",63.25,30.12,47.57,54.68,76.08,120.12,"['Fresno', ' CA', ' United States']", CA
+249,250,"Wichita, KS, United States",63.18,23.45,44.38,57.3,64.33,135.99,"['Wichita', ' KS', ' United States']", KS
+252,253,"Salt Lake City, UT, United States",62.94,35.8,50.1,55.93,66.1,150.76,"['Salt Lake City', ' UT', ' United States']", UT
+255,256,"Detroit, MI, United States",62.77,34.22,49.25,56.21,51.65,97.41,"['Detroit', ' MI', ' United States']", MI
+257,258,"Tulsa, OK, United States",62.67,26.87,45.72,59.49,62.36,129.54,"['Tulsa', ' OK', ' United States']", OK
+258,259,"Cincinnati, OH, United States",62.65,31.03,47.68,52.4,63.41,137.31,"['Cincinnati', ' OH', ' United States']", OH
+261,262,"Lubbock, TX, United States",62.4,24.28,44.35,56.8,64.34,135.19,"['Lubbock', ' TX', ' United States']", TX
+263,264,"Des Moines, IA, United States",62.21,33.57,48.66,57.09,63.36,128.68,"['Des Moines', ' IA', ' United States']", IA
+264,265,"Houston, TX, United States",62.16,43.11,53.14,54.36,72.49,155.88,"['Houston', ' TX', ' United States']", TX
+269,270,"Oklahoma City, OK, United States",61.72,25.72,44.68,60.18,56.84,136.21,"['Oklahoma City', ' OK', ' United States']", OK
+273,274,"Knoxville, TN, United States",60.97,28.75,45.72,59.45,59.43,116.61,"['Knoxville', ' TN', ' United States']", TN
+276,277,"Springfield, MO, United States",60.56,18.66,40.73,60.68,61.21,102.88,"['Springfield', ' MO', ' United States']", MO
+277,278,"Vancouver, WA, United States",60.46,35.97,48.87,50.54,61.81,153.07,"['Vancouver', ' WA', ' United States']", WA
+279,280,"Toledo, OH, United States",60.35,21.26,41.84,50.89,55.69,125.57,"['Toledo', ' OH', ' United States']", OH
+280,281,"Little Rock, AR, United States",60.31,26.4,44.26,55.44,63.52,144.07,"['Little Rock', ' AR', ' United States']", AR
+281,282,"Louisville, KY, United States",60.24,26.86,44.44,53.87,66.45,123.93,"['Louisville', ' KY', ' United States']", KY
+283,284,"Reno, NV, United States",59.84,38.03,49.51,51.96,62.27,136.81,"['Reno', ' NV', ' United States']", NV
+284,285,"Huntsville, AL, United States",59.8,28.65,45.06,58.83,60.2,162.04,"['Huntsville', ' AL', ' United States']", AL
+285,286,"Lexington, KY, United States",59.64,24.86,43.17,54.5,60.08,141.91,"['Lexington', ' KY', ' United States']", KY
+287,288,"Boise, ID, United States",59.43,30.85,45.9,50.93,63.79,120.44,"['Boise', ' ID', ' United States']", ID
+288,289,"El Paso, TX, United States",59.37,22.16,41.76,54.07,59.41,131.7,"['El Paso', ' TX', ' United States']", TX
+293,294,"San Antonio, TX, United States",58.12,31.26,45.41,55.2,52.09,150.96,"['San Antonio', ' TX', ' United States']", TX
