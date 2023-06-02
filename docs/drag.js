@@ -134,34 +134,44 @@ function adjustImageSize(element) {
   }
 
 
-function searchPizza(ingredientsList, pizzaData, percentage) {
-    const ingredients = ingredientsList.map(word => word.toLowerCase());
-    
-    const filteredPizzas = pizzaData.filter(pizza => {
-      const ingredientsInPizza = pizza.ingredients.map(item => item.toLowerCase());
-      const ingredientCoverage = ingredientsInPizza.filter(item => ingredients.includes(item)).length;
-      const requiredCoverage = Math.ceil(percentage * ingredients.length);
-      
-      return ingredientCoverage >= requiredCoverage;
-    });
-    
-    console.log(`We have found ${filteredPizzas.length} places where you can buy this pizza !`);
-    console.log(filteredPizzas);
+  function adjustImageSize(element) {
+    var elementWidth = element.offsetWidth;
+    var elementHeight = element.offsetHeight;
+    element.style.backgroundSize = elementWidth + 'px ' + elementHeight + 'px';
   }
-  
-// Assuming you have loaded the JSON data into the 'pizzaData' variable
-const pizzaData = d3.json("pizza_with_ingredients.json")
 
 
-// Get a reference to the Search button
-const searchButton = document.querySelector('.beautiful-button');
+function searchPizza(ingredientsList, pizzaData, percentage) {
+  const ingredients = ingredientsList.map(word => word.toLowerCase());
 
-// Add click event listener to the Search button
-searchButton.addEventListener('click', () => {
-    // Call the searchPizza function with your desired arguments
-    const percentage = 0.75; // Replace with your desired percentage
-    const filteredPizzas = searchPizza(ingredientsList, pizzaData, percentage);
+  const filteredPizzas = pizzaData.filter(pizza => {
+    const ingredientsInPizza = pizza.ingredients.map(item => item.toLowerCase());
+    const ingredientCoverage = ingredientsInPizza.filter(item => ingredients.includes(item)).length;
+    const requiredCoverage = Math.ceil(percentage * ingredients.length);
 
-});
+    return ingredientCoverage >= requiredCoverage;
+  });
+
+  console.log(`We have found ${filteredPizzas.length} places where you can buy this pizza !`);
+  console.log(filteredPizzas);
+}
+
+// Assuming you have loaded the JSON data using d3.json and it returns a Promise
+d3.json("pizza_with_ingredients.json")
+  .then(pizzaData => {
+    // Get a reference to the Search button
+    const searchButton = document.querySelector('.beautiful-button');
+
+    // Add click event listener to the Search button
+    searchButton.addEventListener('click', () => {
+      // Call the searchPizza function with your desired arguments
+      const ingredientsList = ['tomato', 'cheese', 'pepperoni']; // Replace with your desired ingredients
+      const percentage = 0.75; // Replace with your desired percentage
+      searchPizza(ingredientsList, pizzaData, percentage);
+    });
+  })
+  .catch(error => {
+    console.error("Error loading JSON file:", error);
+  });
 
 
