@@ -1,4 +1,5 @@
 var ingredientsList = [];
+var map = null
 
 
 // enable draggables to be dropped into this
@@ -154,7 +155,7 @@ function searchPizza(ingredientsList, pizzaData, percentage) {
 
   console.log(`We have found ${filteredPizzas.length} places where you can buy this pizza !`);
   console.log(filteredPizzas);
-  initMap();
+  initMap(filteredPizzas);
   
 }
 
@@ -179,24 +180,32 @@ d3.json("pizza_with_ingredients.json")
 
 
 // Function to initialize the map
-function initMap() {
+function initMap(pizzas) {
   map = L.map('map_results',
   {   zoomControl: false,
       minZoom: 5,
       maxZoom: 5
   }).setView([37.8, -96], 4);
+
+  for (var i = 0; i < pizzas.length; i++) {
+    var coord_l = pizzas[i].latitude;
+    var coord_long = pizzas[i].longitude;
+    L.marker([coord_l, coord_long]).addTo(map);
+  }
   
   var tiles = L.tileLayer('img/solid-color-image.png').addTo(map);
 
   geojson = L.geoJson(statesData, {
-      onEachFeature: onEachFeature,
       style: style
   })
 
-  geojson2 = L.geoJson(statesData, {
-      onEachFeature: onEachFeature,
-      style: style2
-  });
+  // Add a default layer
+  geojson.addTo(map);
+}
+
+// Function to initialize the map
+function updateMap() {
+  
 
   // Add a default layer
   geojson.addTo(map);
