@@ -71,6 +71,11 @@
     width:900px;
 }
 
+#map_results { 
+  height: 900px;
+  margin: auto;
+  width:1500px;}
+
 #toggleButton {
     position: relative;
     z-index: 9999;

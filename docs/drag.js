@@ -154,6 +154,8 @@ function searchPizza(ingredientsList, pizzaData, percentage) {
 
   console.log(`We have found ${filteredPizzas.length} places where you can buy this pizza !`);
   console.log(filteredPizzas);
+  initMap();
+  
 }
 
 // Assuming you have loaded the JSON data using d3.json and it returns a Promise
@@ -174,4 +176,29 @@ d3.json("pizza_with_ingredients.json")
     console.error("Error loading JSON file:", error);
   });
 
+
+
+// Function to initialize the map
+function initMap() {
+  map = L.map('map_results',
+  {   zoomControl: false,
+      minZoom: 5,
+      maxZoom: 5
+  }).setView([37.8, -96], 4);
+  
+  var tiles = L.tileLayer('img/solid-color-image.png').addTo(map);
+
+  geojson = L.geoJson(statesData, {
+      onEachFeature: onEachFeature,
+      style: style
+  })
+
+  geojson2 = L.geoJson(statesData, {
+      onEachFeature: onEachFeature,
+      style: style2
+  });
+
+  // Add a default layer
+  geojson.addTo(map);
+}
 
