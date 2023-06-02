@@ -203,7 +203,7 @@ function initMap(pizzas) {
   })
 
   // Add a default layer
-  geojson.addTo(map);
+  geojson.addTo(mapRestos);
 }
 
 // Function to initialize the map
