@@ -17,7 +17,7 @@ function initializeMapState() {
     }).setView([42.8270, -75.5433], 7);
 
     // Add the tile layer to the map
-    tiles = L.tileLayer('../data/solid-color-image.png').addTo(mapState);
+    tiles = L.tileLayer('img/solid-color-image.png').addTo(mapState);
   }
 }
 
@@ -86,7 +86,7 @@ function initMap(info) {
     info.addTo(map);
     legend.addTo(map);
     
-    var tiles = L.tileLayer('../data/solid-color-image.png').addTo(map);
+    var tiles = L.tileLayer('img/solid-color-image.png').addTo(map);
 
     geojson = L.geoJson(statesData, {
         onEachFeature: onEachFeature,
@@ -155,7 +155,7 @@ function navigateToTargetSlide(e) {
             mapState.removeLayer(layer);
         });
     }
-    L.tileLayer('../data/solid-color-image.png').addTo(mapState);
+    L.tileLayer('img/solid-color-image.png').addTo(mapState);
 
     stateLayer = {
         "type": "FeatureCollection",
