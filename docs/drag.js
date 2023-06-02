@@ -212,12 +212,12 @@ function updateMap(pizzas) {
   map.eachLayer(function (layer) {
     map.removeLayer(layer);
     });
+
+    for (var i = 0; i < pizzas.length; i++) {
+      var coord_l = pizzas[i].latitude;
+      var coord_long = pizzas[i].longitude;
+      L.marker([coord_l, coord_long]).addTo(map);
+    }
 }
 
-  for (var i = 0; i < pizzas.length; i++) {
-    var coord_l = pizzas[i].latitude;
-    var coord_long = pizzas[i].longitude;
-    L.marker([coord_l, coord_long]).addTo(map);
-  }
-}
-
+  
