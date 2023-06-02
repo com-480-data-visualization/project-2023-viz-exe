@@ -1,5 +1,5 @@
 var ingredientsList = [];
-var map = null
+var mapRestos = null
 
 
 // enable draggables to be dropped into this
@@ -155,7 +155,7 @@ function searchPizza(ingredientsList, pizzaData, percentage) {
 
   console.log(`We have found ${filteredPizzas.length} places where you can buy this pizza !`);
   console.log(filteredPizzas);
-  if(map == null) {
+  if(mapRestos == null) {
     initMap(filteredPizzas);
   }
   else {
@@ -186,7 +186,7 @@ d3.json("pizza_with_ingredients.json")
 
 // Function to initialize the map
 function initMap(pizzas) {
-  map = L.map('map_results',
+  mapRestos = L.map('map_results',
   {   zoomControl: false,
       minZoom: 5,
       maxZoom: 5
@@ -195,7 +195,7 @@ function initMap(pizzas) {
   for (var i = 0; i < pizzas.length; i++) {
     var coord_l = pizzas[i].latitude;
     var coord_long = pizzas[i].longitude;
-    L.marker([coord_l, coord_long]).addTo(map);
+    L.marker([coord_l, coord_long]).addTo(mapRestos);
   }
   
   geojson = L.geoJson(statesData, {
@@ -209,20 +209,20 @@ function initMap(pizzas) {
 // Function to initialize the map
 function updateMap(pizzas) {
 
-  map.eachLayer(function (layer) {
-    map.removeLayer(layer);
+  mapRestos.eachLayer(function (layer) {
+    mapRestos.removeLayer(layer);
     });
 
     for (var i = 0; i < pizzas.length; i++) {
       var coord_l = pizzas[i].latitude;
       var coord_long = pizzas[i].longitude;
-      L.marker([coord_l, coord_long]).addTo(map);
+      L.marker([coord_l, coord_long]).addTo(mapRestos);
     }
   
     geojson = L.geoJson(statesData, {
       style: style3
   })
-  geojson.addTo(map);
+  geojson.addTo(mapRestos);
 }
 
   

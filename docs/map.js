@@ -81,8 +81,6 @@ function initMap(info) {
         maxZoom: 5
     }).setView([37.8, -96], 4);
 
-     
-
     info.addTo(map);
     legend.addTo(map);
     
