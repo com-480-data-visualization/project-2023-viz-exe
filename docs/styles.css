@@ -74,7 +74,8 @@
 #map_results { 
   height: 900px;
   margin: auto;
-  width:1500px;}
+  width:1500px;
+  background-color: #466f57}
 
 #toggleButton {
     position: relative;

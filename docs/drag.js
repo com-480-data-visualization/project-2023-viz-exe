@@ -155,7 +155,13 @@ function searchPizza(ingredientsList, pizzaData, percentage) {
 
   console.log(`We have found ${filteredPizzas.length} places where you can buy this pizza !`);
   console.log(filteredPizzas);
-  initMap(filteredPizzas);
+  if(map == null) {
+    initMap(filteredPizzas);
+  }
+  else {
+    updateMap(filteredPizzas);
+  }
+  
   
 }
 
@@ -193,10 +199,8 @@ function initMap(pizzas) {
     L.marker([coord_l, coord_long]).addTo(map);
   }
   
-  var tiles = L.tileLayer('img/solid-color-image.png').addTo(map);
-
   geojson = L.geoJson(statesData, {
-      style: style
+      style: style3
   })
 
   // Add a default layer
@@ -204,10 +208,17 @@ function initMap(pizzas) {
 }
 
 // Function to initialize the map
-function updateMap() {
-  
+function updateMap(pizzas) {
 
-  // Add a default layer
-  geojson.addTo(map);
+  map.eachLayer(function (layer) {
+    map.removeLayer(layer);
+    });
+}
+
+  for (var i = 0; i < pizzas.length; i++) {
+    var coord_l = pizzas[i].latitude;
+    var coord_long = pizzas[i].longitude;
+    L.marker([coord_l, coord_long]).addTo(map);
+  }
 }
 

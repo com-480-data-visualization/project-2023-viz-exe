@@ -126,6 +126,17 @@ function style2(feature) {
     };
 }
 
+function style3(feature) {
+    return {
+        fillColor: "#466f57",
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+    };
+}
+
 function onEachFeature(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
