@@ -174,7 +174,6 @@ d3.json("pizza_with_ingredients.json")
     // Add click event listener to the Search button
     searchButton.addEventListener('click', () => {
       // Call the searchPizza function with your desired arguments
-      const ingredientsList = ['tomato', 'cheese', 'pepperoni']; // Replace with your desired ingredients
       const percentage = 0.75; // Replace with your desired percentage
       searchPizza(ingredientsList, pizzaData, percentage);
     });
