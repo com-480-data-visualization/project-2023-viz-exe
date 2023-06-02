@@ -198,7 +198,11 @@ function initMap(pizzas) {
   for (var i = 0; i < pizzas.length; i++) {
     var coord_l = pizzas[i].latitude;
     var coord_long = pizzas[i].longitude;
-    L.marker([coord_l, coord_long]).addTo(mapRestos);
+    var marker = L.marker([coord_l, coord_long]).addTo(mapRestos);
+    marker.on('mouseover', function(e){
+      e.target.bindPopup("test").openPopup();
+      start = new Date().getTime();
+    });  
   }
   
   geojson3 = L.geoJson(statesData, {
