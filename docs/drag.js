@@ -218,6 +218,10 @@ function updateMap(pizzas) {
       var coord_long = pizzas[i].longitude;
       L.marker([coord_l, coord_long]).addTo(map);
     }
+  
+    geojson = L.geoJson(statesData, {
+      style: style3
+  })
 }
 
   
