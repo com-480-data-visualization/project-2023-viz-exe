@@ -5,15 +5,17 @@
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
     crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" 
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" 
         content="width=device-width, user-scalable=np, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.19/fullpage.min.css" integrity="sha512-DbP1b6q56Ud5q0L+lvw9COyyH/+pN1lVmySvun4UsH8vmfdIHou+PAHfMnGXf6Fvd9rYLjSojeuPhQz2euU1cw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="styles.css"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.19/fullpage.min.css" integrity="sha512-DbP1b6q56Ud5q0L+lvw9COyyH/+pN1lVmySvun4UsH8vmfdIHou+PAHfMnGXf6Fvd9rYLjSojeuPhQz2euU1cw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 <body>
     <div id="fullpage">
@@ -28,11 +30,28 @@
             <div class="slide">Specialties</div>
             <div class="slide">Specialties</div>
         </div>
-        <div class="section" id="drapndrop">dragndrop</div>
+        <div class="section" id="drapndrop">
+            Create your own pizza then search for your best option !<br>
+            <div id="tomato" class="drag-drop"></div>
+            <div id="anchovy" class="drag-drop"></div>
+            <div id="basil" class="drag-drop"></div>
+            <div id="salami" class="drag-drop"></div>
+            <div id="artichoke" class="drag-drop"></div>
+            <div id="eggplant" class="drag-drop"></div>
+            <div id="bacon" class="drag-drop"></div>
+            <div id="olives" class="drag-drop"></div>
+            <div id="peppers" class="drag-drop"></div>
+            <div id="pineapple" class="drag-drop"></div>
+            <div id="red_onion" class="drag-drop"></div>
+            <div id="inner-dropzone" class="dropzone"></div>
+            <button class="beautiful-button">Search</button>
+        </div>
         <div class="section" id="pizza index">Pizza Index</div>
         <div class="section" id="credits">Credits</div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.19/fullpage.min.js" integrity="sha512-GS3CSFQ4aj+0fL2a0wV1ouvpdbTZ3eEUriXTpXt50dc0CkO1fgyWuLoPA5NWy1PAWmcaZNneM+OAThgCqPnX+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
+    <script src="drag.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 </body>
 </html>
