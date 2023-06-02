@@ -1,5 +1,6 @@
 var ingredientsList = [];
 var mapRestos = null
+var geojson3;
 
 
 // enable draggables to be dropped into this
@@ -200,12 +201,12 @@ function initMap(pizzas) {
     L.marker([coord_l, coord_long]).addTo(mapRestos);
   }
   
-  geojson = L.geoJson(statesData, {
+  geojson3 = L.geoJson(statesData, {
       style: style3
   })
 
   // Add a default layer
-  geojson.addTo(mapRestos);
+  geojson3.addTo(mapRestos);
 }
 
 // Function to initialize the map
@@ -221,10 +222,10 @@ function updateMap(pizzas) {
       L.marker([coord_l, coord_long]).addTo(mapRestos);
     }
   
-    geojson = L.geoJson(statesData, {
+    geojson3 = L.geoJson(statesData, {
       style: style3
   })
-  geojson.addTo(mapRestos);
+  geojson3.addTo(mapRestos);
 }
 
   
