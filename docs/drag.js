@@ -102,19 +102,19 @@ draggableElements.forEach(function (element) {
   } else if (element.id === 'mushroom') {
     // Set background image for the draggable element with text content 'Orange'
     element.style.backgroundImage = "url('./img/mushroom_small.png')";
-  }else if (element.id === 'olives') {
+  }else if (element.id === 'olive') {
     // Set background image for the draggable element with text content 'Orange'
     element.style.backgroundImage = "url('./img/olives_small.png')";
-  }else if (element.id === 'red_onion') {
+  }else if (element.id === 'onion') {
     // Set background image for the draggable element with text content 'Orange'
     element.style.backgroundImage = "url('./img/red_onion.png')";
-  }else if (element.id === 'peppers') {
+  }else if (element.id === 'pepper') {
     // Set background image for the draggable element with text content 'Orange'
     element.style.backgroundImage = "url('./img/peppers.png')";
   }else if (element.id === 'eggplant') {
     // Set background image for the draggable element with text content 'Orange'
     element.style.backgroundImage = "url('./img/eggplant_big.png')";
-  }else if (element.id === 'salami') {
+  }else if (element.id === 'pepperoni') {
     // Set background image for the draggable element with text content 'Orange'
     element.style.backgroundImage = "url('./img/salami.png')";
   }else if (element.id === 'artichoke') {
