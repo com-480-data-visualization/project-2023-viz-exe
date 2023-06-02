@@ -176,6 +176,8 @@ d3.json("pizza_with_ingredients.json")
       // Call the searchPizza function with your desired arguments
       const percentage = 0.75; // Replace with your desired percentage
       searchPizza(ingredientsList, pizzaData, percentage);
+      fullpage_api.moveSlideRight();
+
     });
   })
   .catch(error => {
