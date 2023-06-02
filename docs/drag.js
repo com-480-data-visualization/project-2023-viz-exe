@@ -222,6 +222,7 @@ function updateMap(pizzas) {
     geojson = L.geoJson(statesData, {
       style: style3
   })
+  geojson.addTo(map);
 }
 
   
