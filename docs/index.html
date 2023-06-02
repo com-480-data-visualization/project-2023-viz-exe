@@ -12,10 +12,11 @@
         content="width=device-width, user-scalable=np, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.19/fullpage.min.css" integrity="sha512-DbP1b6q56Ud5q0L+lvw9COyyH/+pN1lVmySvun4UsH8vmfdIHou+PAHfMnGXf6Fvd9rYLjSojeuPhQz2euU1cw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css"/>
     <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="fullpage.css" />
+  <script type="text/javascript" src="fullpage.js"></script>
 </head>
 <body>
     <div id="fullpage">
@@ -25,9 +26,18 @@
                 <div id="map">
                     <script type="text/javascript" src="../data/us-states.js"></script>
                     <script src="map.js"></script>
+                    <button id="toggleButton" onclick="toggleMap()">
+                        <span class="toggleButton-switch"></span>
+                        <span class="toggleButton-label-left">Absolute number</span>
+                        <span class="toggleButton-label-right">Number by population</span>
+                    </button>
                 </div>
             </div>
-            <div class="slide">Specialties</div>
+            <div class="slide" id="New_York">
+                <div id="map2">
+                    <script type="text/javascript" src="../data/us-states.js"></script>
+                </div>
+            </div>
             <div class="slide">Specialties</div>
         </div>
         <div class="section" id="drapndrop">
@@ -49,7 +59,6 @@
         <div class="section" id="pizza index">Pizza Index</div>
         <div class="section" id="credits">Credits</div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.19/fullpage.min.js" integrity="sha512-GS3CSFQ4aj+0fL2a0wV1ouvpdbTZ3eEUriXTpXt50dc0CkO1fgyWuLoPA5NWy1PAWmcaZNneM+OAThgCqPnX+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
     <script src="drag.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
