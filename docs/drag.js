@@ -179,6 +179,8 @@ d3.json("pizza_with_ingredients.json")
       const percentage = 0.75; // Replace with your desired percentage
       searchPizza(ingredientsList, pizzaData, percentage);
       fullpage_api.moveSlideRight();
+     
+
 
     });
   })

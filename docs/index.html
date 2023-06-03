@@ -22,7 +22,7 @@
 <body>
   <script type="text/javascript" src="usStates.js"></script>
     <div id="fullpage">
-        <div class="section" id="intro">Mamma Mia ! A pizza visualization !</div>
+        <div class="section" id="intro"><h2>Mamma Mia ! A pizza visualization !</h2></div>
         <div class="section" id="specialties">
             <div class="slide">
                 <div class="container">
@@ -47,15 +47,17 @@
             <div class="slide" id="New_York">
               <div class="map-container">
                   <div id="mapState">
+
                   </div>
                   <div class="text-container">
+
                       <h4 class="text_big" id="stateTitle"></h4>
-                      <p class="text_medium" id="priceDescription"></p>
+                      <p class="text_medium" id="priceDescription">Swipe left and click on a state to see which city has the most pizza restaurants !</p>
                       <p class="text_medium" id="stateDescription"></p>
                   </div>
               </div>
       </div>
-            <div class="slide" id="special">Specialties</div>
+            <div class="slide" id="special">Swipe right and click on a green dot to discover USA pizza variations !</div>
         </div>
         <div class="section" id="drapndrop">
             <div class="slide">
@@ -84,8 +86,18 @@
             
         </div>
         <div class="slide" id="results">
-            <div id="map_results">
+            
+          Swipe left and play the mini game to find your restaurant !
+            <div class="containerIndex">
+                <div class="map-boxIndex">
+                  <div id="map_results">
+                  </div>
+                </div>
+                <div class="text-box2Index">
+                  <h2>Wow so much results !</h2>
+                </div>
             </div>
+          </div>
         </div>
         </div>
         <div class="section" id="pizza index">
@@ -117,12 +129,11 @@
                     <img src="img_analysis/pizza_index_by_state.png" alt="Image 1">
                   </div>
                   <div class="analysis-text">
-                    <p>
-                        Here is a visualization of the pizza index by state. How did we build this ?
-                        For every state, we averaged the prices of the pizzas we have. Then we compute a ratio by dividing it by the price average of New York state. This means New York is our reference and the index is centered around it. Note that the pizza index for New York is therefore 1.0.
-                        By looking at the graph, we can easily spot the states where pizzas are more expensive, such as California or Mississippi. 
-                        Now we want to use this information and compare it to the living cost index of the states and try to see if the conclusions we can draw are mostly the same.                           
-                    </p>
+                        <h2>Here is a visualization of the pizza index by state. How did we build this ?</h2>
+                        For every state, we averaged the prices of the pizzas we have. Then we computed a ratio by dividing it by the price average of New York state. <b>This means New York is our reference and the index is centered around it</b>. Note that the pizza index for New York is therefore 1.0.
+                        <br><br>By looking at the graph, we can easily spot the states where pizzas are more expensive, such as California or Mississippi. 
+                        Now we want to use this information and compare it to the living cost index of the states.<br><br>
+                        <b>Swipe right</b> to see if the conclusions we can draw are mostly the same.                           
                   </div>
                 </div>
             </div>
@@ -132,15 +143,27 @@
                     <img src="img_analysis/correlation_pizza_index.png" alt="Image 1">
                   </div>
                   <div class="analysis-text">
-                    <p>
-                        Unfortunately, after a deeper analysis, we found that the pizza index wasn’t the best index to draw attention to the social and economical differences between the American states.  While California may have a pizza index that accurately reflects its cost of living, the majority of Northern states demonstrate a pizza index that contradicts the actual cost of living in those areas. However, this can be due to the fact that we have very little data for those states. This means that the average is based on few values, which can lead to arbitrary conclusions. <br/>
+                    <h2>Where is the correlation ?</h2>
+                        Unfortunately, after a deeper analysis, 
+                        we found that the pizza index wasn’t the best index to draw attention to the social and economical differences between the US states.  
+                        While California may have a pizza index that accurately reflects its cost of living, 
+                        the majority of Northern states demonstrate a pizza index that contradicts the actual cost of living in those areas. <br><br>
+                        However, this can be due to the fact that we have very little data for those states. This means that the average is based on few values, which can lead to arbitrary conclusions. <br/>
                         By studying the correlation between the pizza index and the living cost of the different states, we find that they are slightly positively correlated, as the Pearson and Spearman correlation are 0.137 and 0.124. However, this result is not statistically significant as the p values are too high (0.352 and 0.398).
-                    </p>
                   </div>
                 </div>
             </div>
         </div>
-        <div class="section" id="credits">Credits</div>
+        <div class="section" id="credits">
+          <h2>Credits</h2>
+          Etienne Boisson<br>
+          Emmanuelle Denove<br>
+          Xavier Theimer-Lienhard<br>
+          Datasets<br>
+          Wikipedia<br>
+          Stack
+
+        </div>
     </div>
     <script src="script.js"></script>
     <script src="drag.js"></script>
