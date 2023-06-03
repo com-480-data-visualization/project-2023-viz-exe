@@ -214,8 +214,8 @@ function initMap(pizzas) {
         <p>Price : ${pizzaPrice}</p>
       </div>
       `;
-      // console.log(pizzas)
-      console.log(pizzas[i])
+      console.log("BONJOURRRRRRRR");
+      console.log(pizzas);
       e.target.bindPopup(popupContent).openPopup();
       start = new Date().getTime();
     });
