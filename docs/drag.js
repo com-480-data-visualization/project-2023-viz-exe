@@ -205,14 +205,14 @@ function initMap(pizzas) {
     var city = pizzas[i].city;
 
     var popupContent = `
-      <div style="background-color: #F8F4E3; color: #8B4513; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); font-family: 'Arial', sans-serif;">
-        <h4>${pizzaName}</h4>
-        <p style="margin-bottom: 5px; font-size: 14px;">Price: ${pizzaPrice}</p>
-        <p style="margin-bottom: 5px; font-size: 14px;">Restaurant: ${restaurantName}</p>
-        <p style="margin-bottom: 5px; font-size: 14px;">City: ${city}</p>
+      <div style="background-color: #FFD700; color: #8B0000; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); font-family: 'Brush Script MT', cursive;">
+        <h4 style="font-size: 24px; margin-bottom: 10px;">${pizzaName}</h4>
+        <p style="margin-bottom: 5px; font-size: 16px;">Price: ${pizzaPrice}</p>
+        <p style="margin-bottom: 5px; font-size: 16px;">Restaurant: ${restaurantName}</p>
+        <p style="margin-bottom: 5px; font-size: 16px;">City: ${city}</p>
       </div>
     `;
-
+  
     var marker = L.marker([coord_l, coord_long]).addTo(mapRestos);
 
     marker.bindPopup(popupContent);
