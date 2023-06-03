@@ -19,6 +19,7 @@
     <script type="text/javascript" src="fullpage.js"></script>
 </head>
 <body>
+  <script type="text/javascript" src="usStates.js"></script>
     <div id="fullpage">
         <div class="section" id="intro">Mamma Mia ! A pizza visualization !</div>
         <div class="section" id="specialties">
@@ -42,10 +43,16 @@
                   </div>
             </div>
             <div class="slide" id="New_York">
-                <div id="map2">
-                    <script type="text/javascript" src="usStates.js"></script>
-                </div>
-            </div>
+              <div class="map-container">
+                  <div id="mapState">
+                  </div>
+                  <div class="text-container">
+                      <h4 class="text_big" id="stateTitle"></h4>
+                      <p class="text_medium" id="priceDescription"></p>
+                      <p class="text_medium" id="stateDescription"></p>
+                  </div>
+              </div>
+      </div>
             <div class="slide" id="special">Specialties</div>
         </div>
         <div class="section" id="drapndrop">

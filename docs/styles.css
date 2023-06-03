@@ -164,18 +164,12 @@
     flex: 1;
   }
 
-
-#map { 
+  #map { 
     height: 900px;
+    margin: auto;
     width:1500px;
     background-color: #b58b57}
 
-
-#map2 { 
-    height: 900px;
-    width:900px;
-    background-color: #ae2d06
-}
 
 #map_pizzaIndex { 
   height: 900px;
@@ -192,6 +186,38 @@
 #toggleButton {
     position: relative;
     z-index: 9999;
+}
+
+
+.map-container {
+  display: flex;
+}
+
+#mapState {
+  flex:1;
+  width: 50%;
+  height: 900px;
+  background-color: #b58b57;
+}
+
+.text {
+  font-size: 12px; /* Adjust the font size as needed */
+}
+
+.text_big {
+  font-size: 40px; /* Adjust the font size as needed */
+}
+
+.text_medium {
+  font-size: 30px; /* Adjust the font size as needed */
+}
+
+
+.text-container {
+  flex: 1;
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .info {
@@ -325,6 +351,11 @@ border-radius: 5px;
     margin: 100px;
     font-family: "Poppins", sans-serif;
 
+  }
+
+  .x-axis .tick text {
+    transform: rotate(-45deg);
+    text-anchor: end;
   }
   
   .slide {

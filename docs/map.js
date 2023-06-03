@@ -25,18 +25,6 @@ var mapState = null;
 var stateLayer = null;
 var markersLayer = null;
 
-function initializeMapState() {
-  if (mapState === null) {
-    // Create the Leaflet map for the `map2` container
-    mapState = L.map('map2', {
-      zoomControl: false,
-    }).setView([42.8270, -75.5433], 7);
-
-    // Add the tile layer to the map
-    tiles = L.tileLayer('img/solid-color-image.png').addTo(mapState);
-  }
-}
-
 var info = L.control();
 
 var legend = L.control();
@@ -216,65 +204,70 @@ function onEachFeature(feature, layer) {
 }
 
 
+
 function navigateToTargetSlide(e) {
-    // Get the state's name from the feature properties
-    var stateName = e.target.feature.properties.name;
-    
-    // Call the moveSlideRight() method to move to the next slide
-    fullpage_api.moveSlideRight();
-    
-    // Perform any additional actions or updates based on the clicked state
-    // For example, you can display the state on the next slide
-    //document.getElementById('stateName').innerText = stateName;
+  // Get the state's name from the feature properties
+  var stateName = e.target.feature.properties.name;
+  fullpage_api.moveSlideRight();
+
+  if (mapState === null) {
+      // Create the Leaflet map for the `map2` container
+      mapState = L.map('mapState', {
+        zoomControl: false,
+      }).setView([42.8270, -75.5433], 7);
   
-    // Create a new Leaflet map for the next slide
-
-    initializeMapState();
-
-    if (stateLayer) {
-        mapState.eachLayer(function (layer) {
-            mapState.removeLayer(layer);
-        });
+      // Add the tile layer to the map
     }
-    L.tileLayer('img/solid-color-image.png').addTo(mapState);
 
-    stateLayer = {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "id": "1",
-            "properties":  e.target.feature.properties,
-            "geometry": {
-              "type": "Polygon",
-              "coordinates": e.target.feature.geometry.coordinates
-            }
+  if (stateLayer) {
+      mapState.eachLayer(function (layer) {
+          mapState.removeLayer(layer);
+      });
+  }
+
+  stateLayer = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "id": "1",
+          "properties":  e.target.feature.properties,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": e.target.feature.geometry.coordinates
           }
-        ]
-      }
-    
-    if(stateName == "Washington") {
-        console.log("lol2");
-        mapState.setView([47.400902, -121.490494], 10);
+        }
+      ]
     }
-    else {
-        console.log("else")
-        mapState.setView(stateCoordinates[stateName], zoomLevels[stateName]);
-    }
-    var restosCoords = e.target.feature.properties.restos_coords;
+  
+  mapState.setView(stateCoordinates[stateName], zoomLevels[stateName]);
+  var restosCoords = e.target.feature.properties.restos_coords;
+  restosCoords= restosCoords.filter(
+      (value, index, self) =>
+        index ===
+        self.findIndex((arr) => JSON.stringify(arr) === JSON.stringify(value))
+    );
 
-    for (var i = 0; i < restosCoords.length; i++) {
-        var coord = restosCoords[i];
-        L.marker(coord).addTo(mapState);
-      }
+  for (var i = 0; i < restosCoords.length; i++) {
+      var coord = restosCoords[i];
+      L.marker(coord).addTo(mapState);
+  }
 
 
-    L.geoJson(stateLayer).addTo(mapState);
+  generateBarChart(cities[stateName]);
+
+
+  L.geoJson(stateLayer).addTo(mapState);
+
+  document.getElementById('stateTitle').innerText = stateName;
+  if(e.target.feature.properties.price != 0) {
+      document.getElementById('priceDescription').innerText = "There average price for pizza in " + stateName + " is " + e.target.feature.properties.price.toFixed(2) + "$.";
+  }
+  else {
+      document.getElementById('priceDescription').innerText = "There is no data about average price in this state.";
+  }
+  document.getElementById('stateDescription').innerText = "There are " + restosCoords.length + " pizza restaurants in " + stateName + ". The 10 cities with the most restaurants are : ";
 }
-
-    //if (map.hasLayer(geojson3)) {
-     //   map.removeLayer(geojson3);
-    //}
 
 
 function toggleMap() {
@@ -341,6 +334,95 @@ function getColor2(d) {
   
   // Call the addButtonsToMap() function after initializing the map
 window.onload = initMap(info);
+
+
+function generateBarChart(cityNames) {
+  d3.select('.text-container').select('svg').remove();
+  // Count the frequency of each city name
+  const cityCounts = cityNames.reduce((acc, name) => {
+    acc[name] = (acc[name] || 0) + 1;
+    return acc;
+  }, {});
+
+  // Get the top 10 most common city names
+  const sortedCityCounts = Object.entries(cityCounts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10);
+
+  // Set up the SVG dimensions
+  const width = 600;
+  const height = 400;
+  const margin = { top: 20, right: 20, bottom: 80, left: 60 };
+
+  const tickCount = d3.max(sortedCityCounts, (d) => d[1]);
+
+  // Create the SVG container
+  const svg = d3
+    .select('.text-container')
+    .append('svg')
+    .attr('width', width)
+    .attr('height', height);
+
+  // Set up the x and y scales
+  const x = d3
+    .scaleBand()
+    .domain(sortedCityCounts.map((d) => d[0]))
+    .range([margin.left, width - margin.right])
+    .padding(0.1);
+
+  const y = d3
+    .scaleLinear()
+    .domain([0, d3.max(sortedCityCounts, (d) => d[1])])
+    .range([height - margin.bottom, margin.top]);
+
+  // Create the bars
+  svg
+    .selectAll('.bar')
+    .data(sortedCityCounts)
+    .join('rect')
+    .attr('class', 'bar')
+    .attr('x', (d) => x(d[0]))
+    .attr('y', (d) => y(d[1]))
+    .attr('width', x.bandwidth())
+    .attr('height', (d) => y(0) - y(d[1]))
+    .attr('fill', 'steelblue');
+
+  // Create the x-axis
+  svg
+    .append('g')
+    .attr('class', 'x-axis')
+    .attr('transform', `translate(0,${height - margin.bottom})`)
+    .call(d3.axisBottom(x))
+    .selectAll('.tick text')
+    .attr('class', 'text x-axis-label') // Add the x-axis-label class
+    .attr('transform', 'rotate(-45)')
+    .attr('text-anchor', 'end');
+
+  // Create the y-axis
+  svg
+    .append('g')
+    .attr('transform', `translate(${margin.left},0)`)
+    .call(d3.axisLeft(y).ticks(tickCount, 'd'));
+
+  // Add labels to the x-axis
+  svg
+    .append('text')
+    .attr('class', 'text')
+    .attr('x', width / 2)
+    .attr('y', height)
+    .attr('text-anchor', 'middle')
+    .text('City Name');
+
+  // Add labels to the y-axis
+  svg
+    .append('text')
+    .attr('class', 'text')
+    .attr('transform', 'rotate(-90)')
+    .attr('x', -height / 2)
+    .attr('y', margin.left / 2)
+    .attr('text-anchor', 'middle')
+    .text('Frequency');
+}
 
 
 
