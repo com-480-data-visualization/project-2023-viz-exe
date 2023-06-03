@@ -203,9 +203,9 @@ function navigateToTargetSlide(e) {
 
 
 function toggleMap() {
-    if (map.hasLayer(geojson3)) {
-        map.removeLayer(geojson3);
-    }
+    //if (map.hasLayer(geojson3)) {
+     //   map.removeLayer(geojson3);
+    //}
     if (map.hasLayer(geojson)) {
       map.removeLayer(geojson);
       map.addLayer(geojson2);

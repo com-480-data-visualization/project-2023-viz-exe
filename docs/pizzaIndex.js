@@ -13,6 +13,7 @@ function initMap_index() {
     console.log("hi")
 
     geoJson_pizzaIndex = L.geoJson(data, {
+        onEachFeature:onEachFeature_pizza,
         style: style_index
     })
 
@@ -20,6 +21,34 @@ function initMap_index() {
     // Add a default layer
     geoJson_pizzaIndex.addTo(map_pizzaIndex);
   }
+
+
+function onEachFeature_pizza(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature_pizza,
+        mouseout: resetHighlight_pizza,
+    });
+
+}
+
+function resetHighlight_pizza(e) {
+    if (map_pizzaIndex.hasLayer(geoJson_pizzaIndex)) {
+        geoJson_pizzaIndex.resetStyle(e.target);
+    }
+}
+
+function highlightFeature_pizza(e) {
+    var layer = e.target;
+    
+    layer.setStyle({
+        weight: 5,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+    
+    layer.bringToFront();
+}
 
 function style_index(feature) {
     return {
@@ -33,5 +62,17 @@ function style_index(feature) {
 }
 
 
+function getColor(d) {
+    return d > 50 ? '#800026' :
+           d > 30  ? '#BD0026' :
+           d > 25  ? '#E31A1C' :
+           d > 20  ? '#FC4E2A' :
+           d > 15   ? '#FD8D3C' :
+           d > 10   ? '#FEB24C' :
+           d > 5   ? '#FED976' :
+                      '#FFEDA0';
+}
 
-window.onload = initMap_index();
+
+
+window.onload = initMap_index;
