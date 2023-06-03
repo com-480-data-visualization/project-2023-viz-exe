@@ -195,6 +195,10 @@ function initMap(pizzas) {
       minZoom: 5,
       maxZoom: 5
   }).setView([37.8, -96], 4);
+  
+  var minPricePizza = pizzas.reduce(function (prev, curr) {
+    return prev["menus.amountMax"] < curr["menus.amountMax"] ? prev : curr;
+  })
 
   for (var i = 0; i < pizzas.length; i++) {
     var coord_l = pizzas[i].latitude;
@@ -203,6 +207,10 @@ function initMap(pizzas) {
     var pizzaPrice = pizzas[i]["menus.amountMax"];
     var restaurantName = pizzas[i].name;
     var city = pizzas[i].city;
+
+    var isMinPricePizza = pizzas[i] === minPricePizza;
+
+    var markerClassName = isMinPricePizza ? 'custom-marker-min-price' : 'custom-marker';
 
     var popupContent = `
       <div style="background-color: #FFD700; color: #8B0000; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); font-family: 'Brush Script MT', cursive;">
@@ -213,7 +221,12 @@ function initMap(pizzas) {
       </div>
     `;
   
-    var marker = L.marker([coord_l, coord_long]).addTo(mapRestos);
+    var marker = L.marker([coord_l, coord_long], {
+      icon: L.divIcon({
+        className: markerClassName,
+        iconSize: [32, 32]
+      })
+    }).addTo(mapRestos);
 
     marker.bindPopup(popupContent);
 

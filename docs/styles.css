@@ -244,6 +244,7 @@
 
 .legend {
     position: absolute;
+    width:100px;
     top:700px;
     right:50px;
     line-height: 18px;
@@ -398,3 +399,18 @@ border-radius: 5px;
     font-size: 30px; /* Adjust the font size as needed */
   }
   
+  .custom-marker {
+    background-color: #43a736; /* Replace with your desired color */
+    border-radius: 50%; /* Makes the marker circular */
+    border-color: #494646;
+    border-style: solid;
+    border-width: 3px;
+  }
+
+  .custom-marker-min-price {
+    background-color: hsl(298, 83%, 57%); /* Replace with your desired color */
+    border-radius: 50%; /* Makes the marker circular */
+    border-color: #494646;
+    border-style: solid;
+    border-width: 3px;
+  }

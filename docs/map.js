@@ -36,13 +36,14 @@ legend.onAdd = function (map) {
     return this._div;
 };
 
+
 legend.update = function (current) {
     var grades;
     if (current == "default") {
-        grades = [0, 10, 20, 50, 75, 100, 200, 250];
+        grades = [0, 5, 10, 15, 20, 25, 30, 50];
     }
     else {
-        grades = [0, 4, 8, 12, 16, 20, 24, 28];
+        grades = [0, 1.5, 2, 2.5, 3, 3.5, 4, 4.5];
     }
     this._div.innerHTML = "";
 
@@ -130,7 +131,12 @@ function initMap(info) {
             </div>`;
       
           // Create a marker at the button's coordinates
-          var buttonMarker = L.marker(buttonCoords).addTo(map);
+          var buttonMarker = L.marker(buttonCoords, {
+            icon: L.divIcon({
+              className: 'custom-marker',
+              iconSize: [32, 32]
+            })
+          }).addTo(map);
       
           // Bind a popup to the marker with the desired content
           buttonMarker.bindPopup(buttonPopupContent);
@@ -250,14 +256,24 @@ function navigateToTargetSlide(e) {
 
   for (var i = 0; i < restosCoords.length; i++) {
       var coord = restosCoords[i];
-      L.marker(coord).addTo(mapState);
+      L.marker(coord, {
+        icon: L.divIcon({
+          className: 'custom-marker',
+          iconSize: [32, 32]
+        })
+      }).addTo(mapState);
   }
 
 
   generateBarChart(cities[stateName]);
 
-
-  L.geoJson(stateLayer).addTo(mapState);
+  if(currentMap=="default") {
+    L.geoJson(stateLayer, {style: style}).addTo(mapState);
+  }
+  else {
+    L.geoJson(stateLayer, {style: style2}).addTo(mapState);
+  }
+  
 
   document.getElementById('stateTitle').innerText = stateName;
   if(e.target.feature.properties.price != 0) {
@@ -322,13 +338,13 @@ function getColor(d) {
 }
 
 function getColor2(d) {
-    return d > 28 ? '#800026' :
-           d > 24  ? '#BD0026' :
-           d > 20  ? '#E31A1C' :
-           d > 16  ? '#FC4E2A' :
-           d > 12   ? '#FD8D3C' :
-           d > 8   ? '#FEB24C' :
-           d > 4   ? '#FED976' :
+    return d > 4.5 ? '#800026' :
+           d > 4  ? '#BD0026' :
+           d > 3.5  ? '#E31A1C' :
+           d > 3  ? '#FC4E2A' :
+           d > 2.5   ? '#FD8D3C' :
+           d > 2   ? '#FEB24C' :
+           d > 1.5   ? '#FED976' :
                       '#FFEDA0';
 }
   
@@ -385,7 +401,7 @@ function generateBarChart(cityNames) {
     .attr('y', (d) => y(d[1]))
     .attr('width', x.bandwidth())
     .attr('height', (d) => y(0) - y(d[1]))
-    .attr('fill', 'steelblue');
+    .attr('fill', '#ae2d06'); // Change the color to 'dodgerblue' or any other CSS color value
 
   // Create the x-axis
   svg
