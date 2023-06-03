@@ -199,12 +199,25 @@ function initMap(pizzas) {
   for (var i = 0; i < pizzas.length; i++) {
     var coord_l = pizzas[i].latitude;
     var coord_long = pizzas[i].longitude;
+    var pizzaName = pizzas[i]["menus.name"];
+    var pizzaPrice = pizzas[i]["menus.amountMax"];
+    var restaurantName = pizzas[i].name;
+    var city = pizzas[i].city;
+
     var marker = L.marker([coord_l, coord_long]).addTo(mapRestos);
     marker.on('mouseover', function(e){
-      console.log(pizzas)
-      e.target.bindPopup("test").openPopup();
+      var popupContent = `
+      <div>
+        <h4>${pizzaName}</h4>
+        <p>Restaurant: ${restaurantName}</p>
+        <p>City: ${city}</p>
+        <p>Price : ${pizzaPrice}</p>
+      </div>
+      `;
+      // console.log(pizzas)
+      e.target.bindPopup(popupContent).openPopup();
       start = new Date().getTime();
-    });  
+    });
   }
   
   geojson3 = L.geoJson(statesData, {
