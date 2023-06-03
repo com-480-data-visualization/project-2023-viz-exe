@@ -73,11 +73,17 @@
     background-color: #b58b57
 }
 
-#map_results { 
+#map_pizzaIndex { 
   height: 900px;
-  margin: auto;
-  width:1500px;
-  background-color: #466f57}
+    margin: auto;
+    width:1500px;
+    background-color: #b58b57}
+
+#map_results { 
+    height: 900px;
+    margin: auto;
+    width:1500px;
+    background-color: #466f57}
 
 #toggleButton {
     position: relative;
