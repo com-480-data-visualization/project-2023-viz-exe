@@ -204,9 +204,7 @@ function initMap(pizzas) {
     var restaurantName = pizzas[i].name;
     var city = pizzas[i].city;
 
-    var marker = L.marker([coord_l, coord_long]).addTo(mapRestos);
-    marker.on('mouseover', function(e){
-      var popupContent = `
+    var popupContent = `
       <div>
         <h4>${pizzaName}</h4>
         <p>Restaurant: ${restaurantName}</p>
@@ -214,10 +212,17 @@ function initMap(pizzas) {
         <p>Price : ${pizzaPrice}</p>
       </div>
       `;
-      console.log("BONJOURRRRRRRR");
-      console.log(pizzas);
-      e.target.bindPopup(popupContent).openPopup();
-      start = new Date().getTime();
+
+    var marker = L.marker([coord_l, coord_long]).addTo(mapRestos);
+
+    marker.bindPopup(popupContent);
+
+    marker.on('mousover', function(e){
+      this.openPopup();
+    });
+
+    marker.on('mouseout', function(e){
+      this.closePopup();
     });
   }
   
