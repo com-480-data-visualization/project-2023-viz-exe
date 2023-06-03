@@ -6,10 +6,8 @@
 }
 
 #drapndrop {
-    /* Your CSS styles here */
     padding: 30px;
     font-size: 3em;
-    /* Add more styles as needed */
   }
 
 
@@ -117,16 +115,16 @@
   .map-box {
     background-color: #b58b57;
     text-align: center;
-    flex: 2;
+    flex: 3;
   }
   
   .text-box2 {
-    text-align: left;
-    font-size: 20px;
-    margin: 50px;
-    margin-top:80px;
+    text-align: justify;
+    font-size: 25px;
+    margin-top:125px;
     margin-right: 60px;
     margin-left: 0px;
+    margin-bottom: 100px;
     flex: 1;
   }
 
@@ -137,15 +135,16 @@
   .map-boxIndex {
     background-color: #b58b57;
     text-align: center;
-    flex: 5;
+    flex: 3;
   }
   
   .text-box2Index {
-    text-align: left;
-    font-size: 20px;
+    text-align: justify;
+    font-size: 25px;
+    margin-top:125px;
     margin-right: 60px;
-    margin: 50px;
     margin-left: 0px;
+    margin-bottom: 100px;
     flex: 1;
   }
 
@@ -155,15 +154,16 @@
 
   .map-boxDrag {
     background-color: #466f57;
-    text-align: center;
     flex: 3;
   }
   
   .text-box2Drag {
-    text-align: left;
+    text-align: justify;
     font-size: 25px;
-    margin: 50px;
+    margin-top:125px;
+    margin-right: 60px;
     margin-left: 0px;
+    margin-bottom: 100px;
     flex: 1;
   }
 
@@ -183,7 +183,7 @@
 #map_results { 
     height: 900px;
     margin: auto;
-    width:1500px;
+    width:1400px;
     background-color: #466f57}
 
 #toggleButton {
@@ -204,15 +204,15 @@
 }
 
 .text {
-  font-size: 12px; /* Adjust the font size as needed */
+  font-size: 12px; 
 }
 
 .text_big {
-  font-size: 40px; /* Adjust the font size as needed */
+  font-size: 40px; 
 }
 
 .text_medium {
-  font-size: 30px; /* Adjust the font size as needed */
+  font-size: 30px; 
 }
 
 
@@ -326,7 +326,6 @@ background-color: #c96363;
 color: #000;
 padding: 10px;
 border-radius: 5px;
-/* Add more styles as desired */
 }
 
 
@@ -349,12 +348,12 @@ border-radius: 5px;
     height: auto;
   }
   
-  .text-box {
+  .text-box { /*not used?*/
     flex: 1;
     text-align: justify !important;
-    font-size: 30px;
+    font-size: 100px;
     margin: 100px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
 
   }
 
@@ -375,7 +374,7 @@ border-radius: 5px;
   }
   
   .analysis-item {
-    max-width: 50%; /* Adjust the width as needed */
+    max-width: 50%; 
     padding: 20px;
     flex: 1;
   }
@@ -383,37 +382,37 @@ border-radius: 5px;
   .analysis-item img {
     max-width: 70%;
     height: auto;
-    width: 70%; /* Adjust the image width as needed */
-    border-radius: 10px; /* Add border radius for round corners */
+    width: 70%; 
+    border-radius: 10px; 
   }
   
   .analysis-text {
-    max-width: 75%; /* Adjust the width as needed */
+    max-width: 75%; 
     padding: 20px;
     flex: 1;
     text-align: justify;
     margin-right: 100px;
-    border-radius: 15px; /* Add border radius for round corners */
-    background-color: #ca841c; /* Add a background color */
+    border-radius: 15px; 
+    background-color: #ca841c; 
     color: black;
     font-family: "Poppins", sans-serif;  
   }
   
   .analysis-text p {
-    font-size: 30px; /* Adjust the font size as needed */
+    font-size: 30px; 
   }
   
   .custom-marker {
-    background-color: #43a736; /* Replace with your desired color */
-    border-radius: 50%; /* Makes the marker circular */
+    background-color: #43a736; 
+    border-radius: 50%; 
     border-color: #494646;
     border-style: solid;
     border-width: 3px;
   }
 
   .custom-marker-min-price {
-    background-color: hsl(298, 83%, 57%); /* Replace with your desired color */
-    border-radius: 50%; /* Makes the marker circular */
+    background-color: hsl(298, 83%, 57%); 
+    border-radius: 50%; 
     border-color: #494646;
     border-style: solid;
     border-width: 3px;
