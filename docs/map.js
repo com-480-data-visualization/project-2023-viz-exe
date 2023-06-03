@@ -201,11 +201,12 @@ function navigateToTargetSlide(e) {
     L.geoJson(stateLayer).addTo(mapState);
 }
 
-
-function toggleMap() {
     //if (map.hasLayer(geojson3)) {
      //   map.removeLayer(geojson3);
     //}
+
+
+function toggleMap() {
     if (map.hasLayer(geojson)) {
       map.removeLayer(geojson);
       map.addLayer(geojson2);
