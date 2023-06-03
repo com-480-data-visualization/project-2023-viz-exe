@@ -215,6 +215,7 @@ function initMap(pizzas) {
       </div>
       `;
       // console.log(pizzas)
+      console.log(pizzas[i])
       e.target.bindPopup(popupContent).openPopup();
       start = new Date().getTime();
     });
