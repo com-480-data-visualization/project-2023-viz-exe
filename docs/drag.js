@@ -243,9 +243,33 @@ function updateMap(pizzas) {
 
     for (var i = 0; i < pizzas.length; i++) {
       var coord_l = pizzas[i].latitude;
-      var coord_long = pizzas[i].longitude;
-      L.marker([coord_l, coord_long]).addTo(mapRestos);
-    }
+    var coord_long = pizzas[i].longitude;
+    var pizzaName = pizzas[i]["menus.name"];
+    var pizzaPrice = pizzas[i]["menus.amountMax"];
+    var restaurantName = pizzas[i].name;
+    var city = pizzas[i].city;
+
+    var popupContent = `
+      <div style="background-color: #FFD700; color: #8B0000; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); font-family: 'Brush Script MT', cursive;">
+        <h4 style="font-size: 24px; margin-bottom: 10px;">${pizzaName}</h4>
+        <p style="margin-bottom: 5px; font-size: 16px;">Price: ${pizzaPrice}</p>
+        <p style="margin-bottom: 5px; font-size: 16px;">Restaurant: ${restaurantName}</p>
+        <p style="margin-bottom: 5px; font-size: 16px;">City: ${city}</p>
+      </div>
+    `;
+  
+    var marker = L.marker([coord_l, coord_long]).addTo(mapRestos);
+
+    marker.bindPopup(popupContent);
+
+    marker.on('mouseover', function(e){
+      this.openPopup();
+    });
+
+    marker.on('mouseout', function(e){
+      this.closePopup();
+    });
+  }
   
     geojson3 = L.geoJson(statesData, {
       style: style3
