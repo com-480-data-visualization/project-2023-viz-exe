@@ -282,7 +282,7 @@ function navigateToTargetSlide(e) {
   else {
       document.getElementById('priceDescription').innerText = "There is no data about average price in this state.";
   }
-  document.getElementById('stateDescription').innerText = "There are " + restosCoords.length + " pizza restaurants in " + stateName + ". The 10 cities with the most restaurants are : ";
+  document.getElementById('stateDescription').innerText = "There are " + restosCoords.length + " pizza restaurants in " + stateName + ". The cities with the most restaurants are : ";
 }
 
 

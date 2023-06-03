@@ -121,9 +121,11 @@
   }
   
   .text-box2 {
-    text-align: justify;
+    text-align: left;
     font-size: 20px;
     margin: 50px;
+    margin-top:80px;
+    margin-right: 60px;
     margin-left: 0px;
     flex: 1;
   }
@@ -139,8 +141,9 @@
   }
   
   .text-box2Index {
-    text-align: justify;
+    text-align: left;
     font-size: 20px;
+    margin-right: 60px;
     margin: 50px;
     margin-left: 0px;
     flex: 1;
@@ -157,7 +160,7 @@
   }
   
   .text-box2Drag {
-    text-align: justify;
+    text-align: left;
     font-size: 25px;
     margin: 50px;
     margin-left: 0px;
@@ -167,14 +170,14 @@
   #map { 
     height: 900px;
     margin: auto;
-    width:1500px;
+    width:1400px;
     background-color: #b58b57}
 
 
 #map_pizzaIndex { 
   height: 900px;
     margin: auto;
-    width:1500px;
+    width:1400px;
     background-color: #b58b57}
 
 #map_results { 
@@ -342,6 +345,7 @@ border-radius: 5px;
   
   .image-box img {
     max-width: 100%;
+    border-radius: 10px;
     height: auto;
   }
   
