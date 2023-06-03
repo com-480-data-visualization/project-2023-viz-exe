@@ -2,7 +2,7 @@ var data = {"type": "FeatureCollection", "features": [{"type": "Feature", "id": 
 
 var geoJson_pizzaIndex;
 var map_pizzaIndex;
-
+var legend = L.control();
 
 function initMap_index() {
     map_pizzaIndex = L.map('map_pizzaIndex',
@@ -51,8 +51,9 @@ function highlightFeature_pizza(e) {
 }
 
 function style_index(feature) {
+    if (feature.properties.indexes && feature.properties.indexes.length > 0) {
     return {
-        fillColor: "#466f57",
+        fillColor: getColor_index(feature.properties.indexes[0]),
         weight: 2,
         opacity: 1,
         color: 'white',
@@ -60,19 +61,31 @@ function style_index(feature) {
         fillOpacity: 0.7
     };
 }
-
-
-function getColor(d) {
-    return d > 50 ? '#800026' :
-           d > 30  ? '#BD0026' :
-           d > 25  ? '#E31A1C' :
-           d > 20  ? '#FC4E2A' :
-           d > 15   ? '#FD8D3C' :
-           d > 10   ? '#FEB24C' :
-           d > 5   ? '#FED976' :
-                      '#FFEDA0';
+else {
+    // Handle the case when feature.properties.indexes is undefined or empty
+    // You can set a default style or return null/undefined
+    return {
+        fillColor: 'gray',
+        weight: 1,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.3
+    };
+}
 }
 
+
+function getColor_index(d) {
+    return d > 100 ? '#800026' :
+           d > 90  ? '#BD0026' :
+           d > 85  ? '#E31A1C' :
+           d > 80  ? '#FC4E2A' :
+           d > 75   ? '#FD8D3C' :
+           d > 65   ? '#FEB24C' :
+           d > 55   ? '#FED976' :
+                      '#FFEDA0';
+}
 
 
 window.onload = initMap_index;

@@ -3,6 +3,22 @@ var geojson;
 var geojson2;
 var map;
 
+dico = {"Altoona-style pizza" : [40.51, -78.40, "Altoona", "Pennsylvania", "Altoona-style pizza is a distinct type of pizza created in the city of Altoona, Pennsylvania, by the Altoona Hotel. The definitive characteristics of Altoona-style pizza are a Sicilian-style pizza dough, tomato sauce, sliced green bell pepper, salami, topped with American cheese and pizzas cut into squares instead of wedges. Altoona-style pizza originated at the Altoona Hotel, which was noted as serving a unique pizza in 1996 by the Pittsburgh Post-Gazette. Following the destruction of the hotel in 2013 by fire, other local restaurants began serving Altoona-style pizza.", "altoona.png"],
+       "Bar Pizza" : [42.36, -71.05, "Boston", "Massachusetts", "Bar pizza, also known as tavern pizza and sometimes Milwaukee-style pizza, is distinguished by a thin crust, almost cracker-like, and is baked, or at least partly baked, in a shallow pan for an oily crust. Cheese covers the entire pizza, including the crust, leaving a crispy edge where the cheese meets the pan or oven surface. Bar pizzas are usually served in a bar or pub and are usually small in size. This style of pizza is popular in the Boston area, particularly the South Shore, other parts of the northeast, the Chicago area, and the midwest.", "barpizza.png"],
+       "California-style pizza" : [37.87, -122.27, "Berkeley", "California", "California-style pizza (also known as California pizza) is a style of pizza that combines New York and Italian thin crust with toppings from the California cuisine cooking style. Its invention is generally attributed to chef Ed LaDou, and Chez Panisse, in Berkeley, California. Wolfgang Puck, after meeting LaDou, popularized the style of pizza in the rest of the country. It is served in many California cuisine restaurants. California Pizza Kitchen, Round Table Pizza, Extreme Pizza, and Sammy's Woodfired Pizza are four major pizza franchises associated with California-style pizza.", "california.png"],
+       "Chicago style" : [41.88, -87.62, "Chicago", "Illinois", "Chicago-style pizza is pizza prepared according to several styles developed in Chicago, widely referred to as deep-dish pizza due to its cooking style. The pan in which it is baked gives the pizza its characteristically high edge which provides ample space for large amounts of cheese and a chunky tomato sauce. Chicago-style pizza may be prepared in deep-dish style and as a stuffed pizza.", "chicago.png"],
+       "Detroit-style pizza" : [42.33, -83.04, "Detroit", "Michigan", "Detroit-style pizza is a rectangular pan pizza with a thick, crisp, chewy crust. It is traditionally topped to the edges with Wisconsin brick cheese, which caramelizes against the high-sided heavyweight rectangular pan. Detroit-style pizza was originally baked in rectangular steel trays designed for use as automotive drip pans or to hold small industrial parts in factories. It was developed during the mid-20th century in Detroit, Michigan, before spreading to other parts of the United States in the 2010s. It is one of Detroit's iconic local foods.", "detroit.png"],
+       "Grandma pizza" : [40.8, -73.30, "Long Island", "New York", "Grandma pizza is a distinct thin, rectangular style of pizza attributed to Long Island, New York. Typically topped with cheese and tomato sauce, it is reminiscent of pizzas baked at home by Italian housewives who lacked a pizza oven. The pizza is often compared to Sicilian pizza. A grandma pizza is typically rectangular, with the cheese placed before the tomato sauce, baked in a sheet pan in a home oven, and cut into small squares.", "grandma.png"],
+       "Greek pizza" : [41.35,-72.09, "New London", "Connecticut", "In the cuisine of the United States, Greek pizza is a style of pizza crust and preparation where the pizza is proofed and cooked in a metal pan rather than stretched to order and baked on the floor of the pizza oven. A shallow pan is used, unlike the deep pans used in Sicilian, Chicago, or Detroit-styled pizzas. Its crust is typically spongy, airy, and light, like focaccia but not as thick. The crust is also rather oily, due to the coating of oil applied to the pan during preparation. In the United States, Greek-style pizza is common in New England and parts of eastern New York State.", "greek.png"],
+       "Minneapolis-style pizza" : [44.95, -93.20, "Minneapolis–Saint Paul", "Minnesota", "Minneapolis-style pizza or Minnesota-style pizza is a circular thin-crust pizza, cut into squares, with spicy sauce, and hearty toppings. It is popular in the Twin Cities metropolitan area.", "minneapolis.png"],
+       "New Haven–style" : [41.31, -72.92, "New Haven", "Connecticut", "New Haven–style pizza is a style of thin-crust, coal-fired Neapolitan pizza common in and around New Haven, Connecticut. Locally known as apizza (from Neapolitan na pizza, a pizza), it originated in 1925 at the Frank Pepe Pizzeria Napoletana and is now served in many other pizza restaurants in the area, most notably Sally's Apizza and Modern Apizza. This geographically limited pizza style has been favorably regarded by national critics.", "newhaven.png"],
+       "New York-style" : [40.71, -74.00, "New York City", "New York", "New York-style is a Neapolitan-style thin-crust pizza developed in New York City by immigrants from Naples, Italy, where pizza was created. It is traditionally hand-tossed, moderately topped with southern Italian-style marinara sauce, and liberally covered with mozzarella cheese. It is often sold in generously sized, thin, and flexible slices, typically folded in half to eat. This style of pizza tends to dominate the Northeastern states and is particularly popular in New York, New Jersey, and Connecticut. Jumbo slices of a similar pie are particularly popular in Washington, D.C.", "newyork.png"],
+       "Pan pizza" : [37.68, -97.33, "Wichita", "Kansas", "Pan pizza is a pizza baked in a deep dish pan or sheet pan. Italian tomato pie, Sicilian pizza, Chicago-style pizza and Detroit-style pizza may be considered forms of pan pizza. Pan pizza also refers to the thick style popularized by Pizza Hut in the 1960s. The bottoms and sides of the crust become fried and crispy in the oil used to coat the pan.", "pan.png"],
+       "Quad City–style pizza" : [41.54, -90.59, "Davenport", "Iowa", "Quad City–style pizza is a variety of pizza originating in the Quad Cities region of the states of Illinois and Iowa in the United States. Characteristics of Quad City–style pizza include malt in the crust, tomato sauce made with red chili flakes and/or cayenne pepper, toppings placed under the cheese, and being cut into strips instead of triangular slices.", "quad.png"],
+       "Sicilian pizza" : [45.52, -122.68, "Portland", "Oregon", "Sicilian pizza in the United States is typically a square pie with a thick crust. It is derived from Sfinciuni, a thick-crust variety from Sicily, and was introduced in the US by early Sicilian immigrants. Sicilian-style pizza is popular in Italian-American enclaves in the Northeast, Metro Detroit, and Portland, Oregon.", "sicilian.png"],
+       "St. Louis-style" : [38.62, -90.19, "St. Louis", "Missouri", "St. Louis-style is a variant of thin-crust pizza popular around St. Louis and southern Illinois notable for its use of distinctive Provel cheese instead of (or, rarely, in addition to) mozzarella. Its crust is thin enough to become very crunchy in the oven, sometimes being compared to a cracker, and toppings are usually sliced instead of diced. Even though round, St. Louis-style pies are always cut into small squares.", "stlouis.png"],
+       };
+
 var currentMap = "default"
 
 var mapState = null;
@@ -98,6 +114,22 @@ function initMap(info) {
 
     // Add a default layer
     geojson.addTo(map);
+    // Iterate over the dico dictionary to add buttons
+  for (var key in dico) {
+    if (dico.hasOwnProperty(key)) {
+      var buttonCoords = [dico[key][0], dico[key][1]];
+      var buttonName = key;
+      var buttonPopupContent = `
+        <strong>${buttonName}</strong><br>
+        Location: ${dico[key][2]}, ${dico[key][3]}<br>`;
+      console.log(dico[key])
+      // Create a marker at the button's coordinates
+      var buttonMarker = L.marker(buttonCoords).addTo(map);
+      
+      // Bind a popup to the marker with the desired content
+      buttonMarker.bindPopup(buttonPopupContent);
+    }
+  }
   }
 
 
@@ -267,5 +299,10 @@ function getColor2(d) {
            d > 4   ? '#FED976' :
                       '#FFEDA0';
 }
-
+  
+  // Call the addButtonsToMap() function after initializing the map
 window.onload = initMap(info);
+
+
+
+
