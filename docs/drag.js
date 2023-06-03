@@ -254,6 +254,11 @@ function updateMap(pizzas) {
     mapRestos.removeLayer(layer);
     });
 
+    var minPricePizza = pizzas.reduce(function (prev, curr) {
+      return prev["menus.amountMax"] < curr["menus.amountMax"] ? prev : curr;
+    })
+
+
     for (var i = 0; i < pizzas.length; i++) {
       var coord_l = pizzas[i].latitude;
     var coord_long = pizzas[i].longitude;
@@ -270,8 +275,17 @@ function updateMap(pizzas) {
         <p style="margin-bottom: 5px; font-size: 16px;">City: ${city}</p>
       </div>
     `;
+
+    var isMinPricePizza = pizzas[i] === minPricePizza;
+
+    var markerClassName = isMinPricePizza ? 'custom-marker-min-price' : 'custom-marker';
   
-    var marker = L.marker([coord_l, coord_long]).addTo(mapRestos);
+    var marker = L.marker([coord_l, coord_long], {
+      icon: L.divIcon({
+        className: markerClassName,
+        iconSize: [32, 32]
+      })
+    }).addTo(mapRestos);
 
     marker.bindPopup(popupContent);
 
