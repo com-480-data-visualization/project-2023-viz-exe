@@ -213,8 +213,15 @@ function initMap(pizzas) {
       </div>
     `;
   
-    var marker = L.marker([coord_l, coord_long]).addTo(mapRestos);
-
+    // Define the color scale for marker colors
+    var colorScale = chroma.scale(['red', 'green']).domain([0, 100]); // Adjust the color range and domain according to your needs
+      
+    // Calculate the color based on the pizzaPrice value
+    var markerColor = colorScale(pizzaPrice).hex();
+    
+    // Create the marker with the custom icon color
+    var marker = L.marker([coord_l, coord_long], { icon: L.icon({iconColor: markerColor }) }).addTo(mapRestos);
+  
     marker.bindPopup(popupContent);
 
     marker.on('mouseover', function(e){
@@ -266,7 +273,7 @@ function updateMap(pizzas) {
     var markerColor = colorScale(pizzaPrice).hex();
     
     // Create the marker with the custom icon color
-    var marker = L.marker([coord_l, coord_long], { icon: L.icon({ iconUrl: 'marker-icon.png', iconSize: [25, 41], iconColor: markerColor }) }).addTo(mapRestos);
+    var marker = L.marker([coord_l, coord_long], { icon: L.icon({iconColor: markerColor }) }).addTo(mapRestos);
     
     marker.bindPopup(popupContent);
 
