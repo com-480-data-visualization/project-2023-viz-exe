@@ -114,23 +114,64 @@ function initMap(info) {
 
     // Add a default layer
     geojson.addTo(map);
+
+
+
     // Iterate over the dico dictionary to add buttons
-  for (var key in dico) {
-    if (dico.hasOwnProperty(key)) {
-      var buttonCoords = [dico[key][0], dico[key][1]];
-      var buttonName = key;
-      var buttonPopupContent = `
-        <strong>${buttonName}</strong><br>
-        Location: ${dico[key][2]}, ${dico[key][3]}<br>`;
-      console.log(dico[key])
-      // Create a marker at the button's coordinates
-      var buttonMarker = L.marker(buttonCoords).addTo(map);
+    for (var key in dico) {
+        if (dico.hasOwnProperty(key)) {
+          var buttonCoords = [dico[key][0], dico[key][1]];
+          var buttonName = key;
+          var buttonPopupContent = `
+            <strong>${buttonName}</strong><br>
+            Origin: ${dico[key][2]}, ${dico[key][3]}<br>
+            <img src="./pizza-img/${dico[key][5]}" alt="Image" width="300">
+            `;
+
+
+          console.log(dico[key]);
+          var t = `
+            <div class="slide-content">
+               
+                <div class="image-box">
+                    <img src="./pizza-img/${dico[key][5]}" alt="Image">
+                </div>
+                <div class="text-box">
+                    <h2>${buttonName}</h2>
+
+                    ${dico[key][4]}<br>
+                </div>
+            </div>`;
       
-      // Bind a popup to the marker with the desired content
-      buttonMarker.bindPopup(buttonPopupContent);
-    }
-  }
-  }
+          // Create a marker at the button's coordinates
+          var buttonMarker = L.marker(buttonCoords).addTo(map);
+      
+          // Bind a popup to the marker with the desired content
+          buttonMarker.bindPopup(buttonPopupContent);
+
+          buttonMarker.on('mouseover', function (e) {
+            this.openPopup();
+          });
+      
+          // Close the popup when the mouse leaves the marker
+          buttonMarker.on('mouseout', function (e) {
+            this.closePopup();
+          });
+      
+          // Create a closure for each marker click event handler
+          (function (text) {
+            buttonMarker.on('click', function () {
+              // Navigate to the left slide
+              fullpage_api.moveSlideLeft();
+      
+              // Write the text on the left slide
+              var slideContent = document.querySelector('.fp-slides .fp-slide.active');
+              slideContent.innerHTML = text;
+            });
+          })(t);
+        }
+      }
+    }   
 
 
 
