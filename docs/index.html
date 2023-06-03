@@ -95,9 +95,36 @@
                       This map shows the Pizza Index in the USA.<br><br>
                       Scroll left to see a deeper analysis of this index.
                     </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="container">
+                  <div class="analysis-item">
+                    <img src="img_analysis/pizza_index_by_state.png" alt="Image 1">
                   </div>
-            
-        </div>
+                  <div class="analysis-text">
+                    <p>
+                        Here is a visualization of the pizza index by State. How did we build this ?
+                        For every state, we average the prices of the pizzas we have. Then we compute a ratio by dividing it by the price average of the New York state. This means the New York state is our reference and the index is centered around it. Note that the pizza index for the New York state is therefore 1.0.
+                        By looking at the graph we can easily spot the states where pizzas are more expensive such as California or Mississippi. 
+                        Now we want to use this information and compare it to the living cost index of the states and try to see if the conclusions we can draw are mostly the same.                           
+                    </p>
+                  </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="container">
+                  <div class="analysis-item">
+                    <img src="img_analysis/correlation_pizza_index.png" alt="Image 1">
+                  </div>
+                  <div class="analysis-text">
+                    <p>
+                        Unfortunately, after a deeper analysis, we found that the pizza index wasn’t the best index to draw attention to the social and economical difference between the american states.  While California may have a pizza index that accurately reflects its cost of living, the majority of northern states demonstrate a pizza index that contradicts the actual cost of living in those areas.
+                        By studying the correlation between the pizza index and the living cost of the different states, we find that they are slightly positively correlated as the Pearson and Spearman correlation are 0.137 and 0.124. However this result is not statistically significant as the p values are too high (0.352 and 0.398).
+                    </p>
+                  </div>
+                </div>
+            </div>
         </div>
         <div class="section" id="credits">Credits</div>
     </div>

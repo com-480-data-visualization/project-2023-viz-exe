@@ -331,3 +331,39 @@ border-radius: 5px;
     display: flex;
   }
 
+
+  .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  
+  .analysis-item {
+    max-width: 50%; /* Adjust the width as needed */
+    padding: 20px;
+    flex: 1;
+  }
+  
+  .analysis-item img {
+    max-width: 70%;
+    height: auto;
+    width: 70%; /* Adjust the image width as needed */
+    border-radius: 10px; /* Add border radius for round corners */
+  }
+  
+  .analysis-text {
+    max-width: 75%; /* Adjust the width as needed */
+    padding: 20px;
+    flex: 1;
+    text-align: justify;
+    margin-right: 100px;
+    border-radius: 15px; /* Add border radius for round corners */
+    background-color: #ca841c; /* Add a background color */
+    color: black;
+    font-family: "Poppins", sans-serif;  
+  }
+  
+  .analysis-text p {
+    font-size: 30px; /* Adjust the font size as needed */
+  }
+  
