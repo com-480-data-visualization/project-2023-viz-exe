@@ -36,7 +36,6 @@ Please, fill the following sections about your project.
 
 ### Related work
 
-
 > - What others have already done with the data?
 > - Why is your approach original?
 > - What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
@@ -46,11 +45,14 @@ Please, fill the following sections about your project.
 
 **10% of the final grade**
 
+See the milestone 2 pdf file
+
 
 ## Milestone 3 (4th June, 5pm)
 
 **80% of the final grade**
 
+Explain the technical setup and intended usage.
 
 ## Late policy
 
