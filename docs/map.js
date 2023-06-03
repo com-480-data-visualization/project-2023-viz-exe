@@ -100,8 +100,6 @@ function initMap(info) {
     info.addTo(map);
     legend.addTo(map);
     
-    var tiles = L.tileLayer('img/solid-color-image.png').addTo(map);
-
     geojson = L.geoJson(statesData, {
         onEachFeature: onEachFeature,
         style: style

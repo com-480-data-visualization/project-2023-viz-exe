@@ -23,15 +23,23 @@
         <div class="section" id="intro">Mamma Mia ! A pizza visualization !</div>
         <div class="section" id="specialties">
             <div class="slide">
-                <div id="map">
-                    <script type="text/javascript" src="usStates.js"></script>
-                    <script src="map.js"></script>
-                    <button id="toggleButton" onclick="toggleMap()">
-                        <span class="toggleButton-switch"></span>
-                        <span class="toggleButton-label-left">Absolute number</span>
-                        <span class="toggleButton-label-right">Number by population</span>
-                    </button>
-                </div>
+                <div class="container">
+                    <div class="map-box">
+                      <div id="map">
+                        <script type="text/javascript" src="usStates.js"></script>
+                        <script src="map.js"></script>
+                        <button id="toggleButton" onclick="toggleMap()">
+                          <span class="toggleButton-switch"></span>
+                          <span class="toggleButton-label-left">Absolute number</span>
+                          <span class="toggleButton-label-right">Number by population</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="text-box2">
+                      This map shows the number of pizza restaurants per state in the USA.<br><br>
+                      Each blue marker represent a pizza speciality, click on them to discover more about them.
+                    </div>
+                  </div>
             </div>
             <div class="slide" id="New_York">
                 <div id="map2">
@@ -64,14 +72,23 @@
         </div>
         <div class="section" id="pizza index">
             <div class="slide">
-            <div id="map_pizzaIndex">
-                <button id="toggleButton_Index" onclick="toggleMap_PI()">
-                    <span class="toggleButton_Index-switch"></span>
-                    <span class="toggleButton_Index-label-left">Living Index</span>
-                    <span class="toggleButton_Index-label-right">Pizza Index</span>
-                </button>
-                <script type="text/javascript" src="pizzaIndex.js"></script>
-            </div>
+                <div class="containerIndex">
+                    <div class="map-boxIndex">
+                        <div id="map_pizzaIndex">
+                            <button id="toggleButton_Index" onclick="toggleMap_PI()">
+                                <span class="toggleButton_Index-switch"></span>
+                                <span class="toggleButton_Index-label-left">Living Index</span>
+                                <span class="toggleButton_Index-label-right">Pizza Index</span>
+                            </button>
+                            <script type="text/javascript" src="pizzaIndex.js"></script>
+                        </div>
+                    </div>
+                    <div class="text-box2Index">
+                      This map shows the Pizza Index in the USA.<br><br>
+                      Scroll left to see a deeper analysis of this index.
+                    </div>
+                  </div>
+            
         </div>
         </div>
         <div class="section" id="credits">Credits</div>

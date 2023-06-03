@@ -108,16 +108,57 @@
 .fp-watermark { 
     display: none;
 }
+
+
+.container {
+    display: flex;
+  }
+
+  .map-box {
+    background-color: #ae2d06;
+    text-align: center;
+    flex: 5;
+  }
+  
+  .text-box2 {
+    text-align: justify;
+    font-size: 20px;
+    margin: 50px;
+    margin-left: 0px;
+    flex: 1;
+  }
+
+  .containerIndex {
+    display: flex;
+  }
+
+  .map-boxIndex {
+    background-color: #b58b57;
+    text-align: center;
+    flex: 5;
+  }
+  
+  .text-box2Index {
+    text-align: justify;
+    font-size: 20px;
+    margin: 50px;
+    margin-left: 0px;
+    flex: 1;
+  }
+
+
 #map { 
     height: 900px;
     margin: auto;
     width:1500px;
-    background-color: #b58b57}
+    background-color: #ae2d06}
+
+
 #map2 { 
     height: 900px;
     margin-left: 60px;
     width:900px;
-    background-color: #b58b57
+    background-color: #ae2d06
 }
 
 #map_pizzaIndex { 
@@ -270,5 +311,7 @@ border-radius: 5px;
 
   }
   
- 
-  
+  .slide {
+    display: flex;
+  }
+
