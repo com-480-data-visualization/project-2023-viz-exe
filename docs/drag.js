@@ -201,6 +201,7 @@ function initMap(pizzas) {
     var coord_long = pizzas[i].longitude;
     var marker = L.marker([coord_l, coord_long]).addTo(mapRestos);
     marker.on('mouseover', function(e){
+      console.log(pizzas)
       e.target.bindPopup("test").openPopup();
       start = new Date().getTime();
     });  
