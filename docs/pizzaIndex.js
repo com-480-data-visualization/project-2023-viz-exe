@@ -31,7 +31,6 @@ function initMap_index() {
         style: style_pizzaIndex
     })
 
-    // Add a default layer
     geoJson_livingIndex.addTo(map_pizzaIndex);
   }
 
@@ -46,7 +45,7 @@ function initMap_index() {
         currentMap = "default"
     }
     var toggleButton_index = document.getElementById("toggleButton_Index");
-    toggleButton_index.classList.toggle("active"); // Toggle the "active" class
+    toggleButton_index.classList.toggle("active"); 
     legend.update(map_pizzaIndex);
 }
 
@@ -63,7 +62,6 @@ legend_pizza.update = function (current) {
     grades = [0, 55, 65, 75, 80, 85, 90, 100];
     this._div.innerHTML = "";
 
-    // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
         this._div.innerHTML +=
             '<i_index style="background:' + getColor_index(grades[i] + 1) + '"></i> ' +
@@ -115,8 +113,6 @@ function style_index(feature) {
 }
 
 else {
-    // Handle the case when feature.properties.indexes is undefined or empty
-    // You can set a default style or return null/undefined
     return {
         fillColor: 'gray',
         weight: 1,
@@ -141,8 +137,6 @@ function style_pizzaIndex(feature) {
 }
 
 else {
-    // Handle the case when feature.properties.indexes is undefined or empty
-    // You can set a default style or return null/undefined
     return {
         fillColor: 'gray',
         weight: 1,

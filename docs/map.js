@@ -47,7 +47,6 @@ legend.update = function (current) {
     }
     this._div.innerHTML = "";
 
-    // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
         color = current == "default" ?  getColor(grades[i] + 1) :  getColor2(grades[i] + 1)
         this._div.innerHTML +=
@@ -58,12 +57,11 @@ legend.update = function (current) {
 
 
 info.onAdd = function (map) {
-    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this._div = L.DomUtil.create('div', 'info');
     this.update(currentMap);
     return this._div;
 };
 
-// method that we will use to update the control based on feature properties passed
 info.update = function (current, props) {
     if (current == "default") {
         this._div.innerHTML = '<h4>Number of restaurants</h4>' +  (props ?
@@ -78,7 +76,6 @@ info.update = function (current, props) {
 };
 
 
-// Function to initialize the map
 function initMap(info) {
     map = L.map('map',
     {   zoomControl: false,
@@ -99,12 +96,10 @@ function initMap(info) {
         style: style2
     });
 
-    // Add a default layer
     geojson.addTo(map);
 
 
 
-    // Iterate over the dico dictionary to add buttons
     for (var key in dico) {
         if (dico.hasOwnProperty(key)) {
           var buttonCoords = [dico[key][0], dico[key][1]];
@@ -130,7 +125,6 @@ function initMap(info) {
                 </div>
             </div>`;
       
-          // Create a marker at the button's coordinates
           var buttonMarker = L.marker(buttonCoords, {
             icon: L.divIcon({
               className: 'custom-marker',
@@ -138,25 +132,20 @@ function initMap(info) {
             })
           }).addTo(map);
       
-          // Bind a popup to the marker with the desired content
           buttonMarker.bindPopup(buttonPopupContent);
 
           buttonMarker.on('mouseover', function (e) {
             this.openPopup();
           });
       
-          // Close the popup when the mouse leaves the marker
           buttonMarker.on('mouseout', function (e) {
             this.closePopup();
           });
       
-          // Create a closure for each marker click event handler
           (function (text) {
             buttonMarker.on('click', function () {
-              // Navigate to the left slide
               fullpage_api.moveSlideLeft();
       
-              // Write the text on the left slide
               var slideContent = document.querySelector('.fp-slides .fp-slide.active');
               slideContent.innerHTML = text;
             });
