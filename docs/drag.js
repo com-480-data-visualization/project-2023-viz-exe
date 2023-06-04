@@ -173,7 +173,7 @@ d3.json("pizza_with_ingredients.json")
 
     
     // Create a closure for each marker click event handler
-    (function (text) {
+    (function () {
       buttonMarker.on('click', function () {
         // Navigate to the left slide
         const percentage = 0.75; // Replace with your desired percentage
@@ -202,9 +202,9 @@ d3.json("pizza_with_ingredients.json")
 
         // Write the text on the left slide
         var slideContent = document.querySelector('.fp-slides .fp-slide.active');
-        slideContent.innerHTML = text;
+        slideContent.innerHTML = t;
       });
-    })(t);
+    })();
     
   })
   .catch(error => {
