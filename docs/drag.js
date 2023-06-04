@@ -170,8 +170,6 @@ d3.json("pizza_with_ingredients.json")
     // Get a reference to the Search button
     const searchButton = document.querySelector('.beautiful-button');
 
-
-    
     // Create a closure for each marker click event handler
     (function () {
       buttonMarker.on('click', function () {
@@ -179,25 +177,27 @@ d3.json("pizza_with_ingredients.json")
         const percentage = 0.75; // Replace with your desired percentage
         var filtered = searchPizza(ingredientsList, pizzaData, percentage);
         var text = `
-    <div class="slide-content">
-      
-        <div class="image-box">
-        <script type="text/javascript">
-        if(mapRestos == null) {
-            initMap(filteredPizzas);
-          }
-          else {
-            updateMap(filteredPizzas);
-          } 
-        </script>
-          
-        </div>
-        <div class="text-box">
-            <h2>Wow so many results !</h2>
-            We have found ${filtered.length} places where you can buy this pizza !
+          <div class="slide-content">
             
-        </div>
-    </div>`;
+              <div class="image-box">
+              <script type="text/javascript">
+              if(mapRestos == null) {
+                  initMap(filteredPizzas);
+                }
+                else {
+                  updateMap(filteredPizzas);
+                } 
+              </script>
+                
+              </div>
+              <div class="text-box">
+                  <h2>Wow so many results !</h2>
+                  We have found ${filtered.length} places where you can buy this pizza !
+                  
+              </div>
+          </div>
+        `;
+
         fullpage_api.moveSlideRight();
 
         // Write the text on the left slide
