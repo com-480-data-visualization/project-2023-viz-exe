@@ -152,7 +152,7 @@ function searchPizza(ingredientsList, pizzaData, percentage) {
     const ingredientCoverage = ingredientsInPizza.filter(item => ingredients.includes(item)).length;
     const requiredCoverage = Math.ceil(percentage * ingredients.length);
 
-    return ingredientCoverage >= requiredCoverage && pizza.menus.amountMax > 3; ;
+    return ingredientCoverage >= requiredCoverage && pizza["menus.amountMax"] > 3; ;
   });
 
   console.log(`We have found ${filteredPizzas.length} places where you can buy this pizza !`);
