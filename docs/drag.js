@@ -182,6 +182,7 @@ function searchPizza(ingredientsList, pizzaData, percentage) {
   </div>`;
   var slideContent = document.querySelector('.fp-slides .fp-slide.active');
   slideContent.innerHTML = text;
+  console.log(slideContent.innerHTML)
   
   
 }
