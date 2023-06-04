@@ -152,7 +152,7 @@ function searchPizza(ingredientsList, pizzaData, percentage) {
     const ingredientCoverage = ingredientsInPizza.filter(item => ingredients.includes(item)).length;
     const requiredCoverage = Math.ceil(percentage * ingredients.length);
 
-    return ingredientCoverage >= requiredCoverage;
+    return ingredientCoverage >= requiredCoverage && pizza.menus.amountMax > 3; ;
   });
 
   console.log(`We have found ${filteredPizzas.length} places where you can buy this pizza !`);
@@ -215,7 +215,7 @@ function initMap(pizzas) {
     var markerClassName = isMinPricePizza ? 'custom-marker-min-price' : 'custom-marker';
 
     var popupContent = `
-      <div style="background-color: #FFD700; color: #8B0000; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); font-family: 'Brush Script MT', cursive;">
+      <div style="background-color: #F4E3C3; color: #8c0b0b; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); font-family: 'Brush Script MT', cursive;">
         <h4 style="font-size: 24px; margin-bottom: 10px;">${pizzaName}</h4>
         <p style="margin-bottom: 5px; font-size: 16px;">Price: ${pizzaPrice}</p>
         <p style="margin-bottom: 5px; font-size: 16px;">Restaurant: ${restaurantName}</p>
