@@ -178,7 +178,7 @@ d3.json("pizza_with_ingredients.json")
         // Navigate to the left slide
         const percentage = 0.75; // Replace with your desired percentage
         var filtered = searchPizza(ingredientsList, pizzaData, percentage);
-        var t = `
+        var text = `
     <div class="slide-content">
       
         <div class="image-box">
@@ -202,7 +202,7 @@ d3.json("pizza_with_ingredients.json")
 
         // Write the text on the left slide
         var slideContent = document.querySelector('.fp-slides .fp-slide.active');
-        slideContent.innerHTML = t;
+        slideContent.innerHTML = text;
       });
     })();
     
