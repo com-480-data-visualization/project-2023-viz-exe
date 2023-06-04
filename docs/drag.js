@@ -157,32 +157,9 @@ function searchPizza(ingredientsList, pizzaData, percentage) {
 
   console.log(`We have found ${filteredPizzas.length} places where you can buy this pizza !`);
   console.log(filteredPizzas);
+  return filteredPizzas
   
-  fullpage_api.moveSlideRight();
-
-  var text = `
-  <div class="slide-content">
-     
-      <div class="image-box">
-      <script type="text/javascript">
-      if(mapRestos == null) {
-          initMap(filteredPizzas);
-        }
-        else {
-          updateMap(filteredPizzas);
-        } 
-      </script>
-        
-      </div>
-      <div class="text-box">
-          <h2>Wow so many results !</h2>
-          We have found ${filteredPizzas.length} places where you can buy this pizza !
-          
-      </div>
-  </div>`;
-  var slideContent = document.querySelector('.fp-slides .fp-slide.active');
-  slideContent.innerHTML = text;
-  console.log(slideContent.innerHTML)
+  
   
   
 }
@@ -193,16 +170,42 @@ d3.json("pizza_with_ingredients.json")
     // Get a reference to the Search button
     const searchButton = document.querySelector('.beautiful-button');
 
-    // Add click event listener to the Search button
-    searchButton.addEventListener('click', () => {
-      // Call the searchPizza function with your desired arguments
-      const percentage = 0.75; // Replace with your desired percentage
-      searchPizza(ingredientsList, pizzaData, percentage);
+
+    
+    // Create a closure for each marker click event handler
+    (function (text) {
+      buttonMarker.on('click', function () {
+        // Navigate to the left slide
+        const percentage = 0.75; // Replace with your desired percentage
+        var filtered = searchPizza(ingredientsList, pizzaData, percentage);
+        var t = `
+    <div class="slide-content">
       
-     
+        <div class="image-box">
+        <script type="text/javascript">
+        if(mapRestos == null) {
+            initMap(filteredPizzas);
+          }
+          else {
+            updateMap(filteredPizzas);
+          } 
+        </script>
+          
+        </div>
+        <div class="text-box">
+            <h2>Wow so many results !</h2>
+            We have found ${filtered.length} places where you can buy this pizza !
+            
+        </div>
+    </div>`;
+        fullpage_api.moveSlideRight();
 
-
-    });
+        // Write the text on the left slide
+        var slideContent = document.querySelector('.fp-slides .fp-slide.active');
+        slideContent.innerHTML = text;
+      });
+    })(t);
+    
   })
   .catch(error => {
     console.error("Error loading JSON file:", error);
